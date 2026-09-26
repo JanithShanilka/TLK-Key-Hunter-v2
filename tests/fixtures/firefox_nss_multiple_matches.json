@@ -1,0 +1,11 @@
+{
+  "hook_pattern_id": "negative-control-multiple-matches",
+  "hook_pattern_hex": "55 41 57 41 56 41 55 41 54 53 48 81 EC C8 00 00 00 4D 89 CE 4C 89 C3 49 89 CC 49 89 F5 49 89 FF 64 48 8B 04 25 28 00 00 00 48 89 84 24 C0 00 00 00 48 85 D2 74 67",
+  "required_pattern_matches": 2,
+  "artifacts": {
+    "libssl3": {
+      "sha256": "41b76c48fff44d62e34b463e52d1a4842f1b8c39711e6e1ac77ae6dbc3906f57",
+      "build_id": "25bf915d26112095d760d5826114e734620c399d"
+    }
+  }
+}

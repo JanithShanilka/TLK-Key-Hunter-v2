@@ -1,0 +1,98 @@
+{
+  "controls": {
+    "negative_passed": 8,
+    "negative_total": 8,
+    "positive_sanity": true
+  },
+  "cross_protocol": [
+    {
+      "attempted_sessions": 30,
+      "authenticated_decryptions": 30,
+      "complete_recoveries": 30,
+      "dataset": "Firefox/NSS TLS 1.2 final",
+      "exact_reference_scope": "all sessions",
+      "exact_secret_matches": 30,
+      "protocol": "TLS 1.2",
+      "sealed_acquisitions": 30,
+      "wilson_95_lower": 0.8864866068260312,
+      "wilson_95_upper": 0.9999999999999999
+    },
+    {
+      "attempted_sessions": 90,
+      "authenticated_decryptions": 90,
+      "complete_recoveries": 90,
+      "dataset": "Firefox/NSS TLS 1.3 accepted historical final",
+      "exact_reference_scope": "functional validation only",
+      "exact_secret_matches": "not measured",
+      "protocol": "TLS 1.3",
+      "sealed_acquisitions": "not measured under sealed chronology",
+      "wilson_95_lower": 0.9590643744356734,
+      "wilson_95_upper": 1.0
+    },
+    {
+      "attempted_sessions": 5,
+      "authenticated_decryptions": 5,
+      "complete_recoveries": 5,
+      "dataset": "Firefox/NSS TLS 1.3 strict regression",
+      "exact_reference_scope": "all regression sessions",
+      "exact_secret_matches": 5,
+      "protocol": "TLS 1.3",
+      "sealed_acquisitions": 5,
+      "wilson_95_lower": 0.5655175352168251,
+      "wilson_95_upper": 1.0
+    }
+  ],
+  "frozen_commit": "e65078b5f0be41e61ec9fbdd323133352a9b58eb",
+  "generated_at": "2026-08-30T14:28:27+00:00",
+  "integrity": {
+    "abi_manifest_valid": true,
+    "controls_manifest_valid": true,
+    "freeze_manifest_valid": true,
+    "live_campaign_manifest_valid": true,
+    "tls12_campaign_manifest_valid": true,
+    "tls12_session_manifests_valid": 30,
+    "tls13_campaign_manifest_valid": true,
+    "tls13_historical_session_manifests_valid": 90,
+    "tls13_regression_manifest_valid": true,
+    "visual_manifest_valid": true
+  },
+  "ranker_live": [
+    {
+      "ambiguous": 0,
+      "attempted_sessions": 20,
+      "authenticated_decryptions": 10,
+      "candidate_selections": 15,
+      "complete_recoveries": 10,
+      "exact_secret_matches": 10,
+      "false_candidate": 5,
+      "method": "A",
+      "no_candidate": 5
+    },
+    {
+      "ambiguous": 0,
+      "attempted_sessions": 20,
+      "authenticated_decryptions": 20,
+      "candidate_selections": 20,
+      "complete_recoveries": 20,
+      "exact_secret_matches": 20,
+      "false_candidate": 0,
+      "method": "D",
+      "no_candidate": 0
+    }
+  ],
+  "ranker_native": [
+    {
+      "argument_identification_accuracy": 0.08333333333333333,
+      "configuration": "A_hardcoded",
+      "correct": 10,
+      "total": 120
+    },
+    {
+      "argument_identification_accuracy": 1.0,
+      "configuration": "D_full_ranker",
+      "correct": 120,
+      "total": 120
+    }
+  ],
+  "schema": "tlskh-report-v3-summary-v1"
+}

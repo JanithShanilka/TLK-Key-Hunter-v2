@@ -1,0 +1,22 @@
+[
+  {
+    "path": "TLSKeyHunter.java",
+    "sha256": "ffc5ce7b433d7e11627c1c4394679550a76e682781e372c70f7bf4ed192138e8",
+    "source": "user-supplied TLSKeyHunter-main archive; exact upstream commit unverified"
+  },
+  {
+    "path": "MinimalAnalysisOption.java",
+    "sha256": "28907c8ccce6acda3cf219608ce29b423a5f1a657b50a84f3493629c2f9c1dd9",
+    "source": "user-supplied TLSKeyHunter-main archive; exact upstream commit unverified"
+  },
+  {
+    "path": "custom_log4j.xml",
+    "sha256": "794fc20d39ffefa3bf57b5f44ea0709011fd4f0cab7cd13e8bfe46cd17ff7518",
+    "source": "user-supplied TLSKeyHunter-main archive; exact upstream commit unverified"
+  },
+  {
+    "path": "network_decryption/randomInverse.py",
+    "sha256": "7f19a9ec0ae3240e0c3f61be1cdb5ee4e4d681d082b0952a9c41ff82915a4cb4",
+    "source": "user-supplied TLSKeyHunter-main archive; exact upstream commit unverified"
+  }
+]

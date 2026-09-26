@@ -1,0 +1,19 @@
+{
+  "arg_ranker_source_sha256": "281e19ecec5cb24c1097ffad7dcc4641f4292209a709cc93621c756cdf716171",
+  "features": [
+    "readability",
+    "length",
+    "entropy",
+    "zero_count",
+    "consistency",
+    "preferred_indexes"
+  ],
+  "minimum_scores": {
+    "client_random": 50,
+    "integer": 50,
+    "label": 60,
+    "secret": 65,
+    "structure": 50
+  },
+  "no_candidate_below_threshold": true
+}

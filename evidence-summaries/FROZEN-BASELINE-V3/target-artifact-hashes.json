@@ -1,0 +1,22 @@
+{
+  "firefox": {
+    "path": "/opt/tlskeyhunter/firefox-136.0.2-pristine/firefox",
+    "sha256": "385265da8818d293afd50ce410b678e3cf2079bb4e2d60231dfb818cd12b8b55"
+  },
+  "firefox-bin": {
+    "path": "/opt/tlskeyhunter/firefox-136.0.2-pristine/firefox-bin",
+    "sha256": "4fc64e40bcfb40c45ab4f2957a7f3955ef66a004da98cdea35c315f32f8660ff"
+  },
+  "libnss3": {
+    "path": "/opt/tlskeyhunter/firefox-136.0.2-pristine/libnss3.so",
+    "sha256": "c3685d36c136c1688029e88f884942e1860e378efe04b63257e78536e517cca2"
+  },
+  "libsoftokn3": {
+    "path": "/opt/tlskeyhunter/firefox-136.0.2-pristine/libsoftokn3.so",
+    "sha256": "064c24743abe22bc8c9b87c6f8c4d7e8facc66d94a73b7ed9702e1d2733d2fe7"
+  },
+  "libssl3": {
+    "path": "/opt/tlskeyhunter/firefox-136.0.2-pristine/libssl3.so",
+    "sha256": "41b76c48fff44d62e34b463e52d1a4842f1b8c39711e6e1ac77ae6dbc3906f57"
+  }
+}

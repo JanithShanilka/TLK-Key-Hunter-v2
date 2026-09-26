@@ -1,0 +1,27 @@
+{
+  "benchmark_id": "ARG-RANKER-ABI-FINAL-001",
+  "binary_sha256": "c24d320adebc0b3aa6ee0407347fa89a9e6ebca07a4f4491e318b5359456d179",
+  "configurations": [
+    "A_hardcoded",
+    "D_full_ranker"
+  ],
+  "expected_observations": 240,
+  "observed": 240,
+  "ranker_sha256": "40236adfd55e136ee95602135f51c7c70cfd40af1e7e6a6fe0994e2bffbc7abe",
+  "schema_version": 2,
+  "source_sha256": "45834a7ec0370f4234afb3ffca6b8278ec71e33aecb5f6b4cf9dd638ea1bee56",
+  "summary": [
+    {
+      "argument_identification_accuracy": 0.08333333333333333,
+      "configuration": "A_hardcoded",
+      "correct": 10,
+      "total": 120
+    },
+    {
+      "argument_identification_accuracy": 1.0,
+      "configuration": "D_full_ranker",
+      "correct": 120,
+      "total": 120
+    }
+  ]
+}

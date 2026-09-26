@@ -1,0 +1,60 @@
+{
+  "all_negative_controls_passed": true,
+  "controls": [
+    {
+      "control": "no_key_log_file",
+      "exact_request_path_recovered": false,
+      "exact_response_marker_recovered": false,
+      "passed": true
+    },
+    {
+      "control": "random_secret_correct_length",
+      "exact_request_path_recovered": false,
+      "exact_response_marker_recovered": false,
+      "passed": true
+    },
+    {
+      "control": "one_bit_modified_secret",
+      "exact_request_path_recovered": false,
+      "exact_response_marker_recovered": false,
+      "passed": true
+    },
+    {
+      "control": "correct_secret_wrong_client_random",
+      "exact_request_path_recovered": false,
+      "exact_response_marker_recovered": false,
+      "passed": true
+    },
+    {
+      "control": "frida_diagnostics_as_keylog",
+      "exact_request_path_recovered": false,
+      "exact_response_marker_recovered": false,
+      "passed": true
+    },
+    {
+      "control": "correct_candidate_wrong_tcp_stream",
+      "exact_request_path_recovered": false,
+      "exact_response_marker_recovered": false,
+      "passed": true
+    },
+    {
+      "control": "unsupported_nss_hash_or_build_id",
+      "extraction_blocked": true,
+      "passed": true
+    },
+    {
+      "control": "multiple_fingerprint_matches",
+      "extraction_blocked": true,
+      "passed": true
+    }
+  ],
+  "positive_sanity": {
+    "exact_request_path_recovered": true,
+    "exact_response_marker_recovered": true,
+    "passed": true
+  },
+  "secrets_in_report": false,
+  "source_case": "FIREFOX-NSS-TLS13-FINAL-MEASURED-001-R03-S030",
+  "source_pcap_sha256": "e8d29d791ac2db2cf4cde3f23fd1b506825cd98ac604062df4521b69c10432ef",
+  "source_verified_keylog_sha256": "a983e0bc8c2ec1fb774491e9957e7ae933b11f50a1e9886f99c40657e0024d58"
+}

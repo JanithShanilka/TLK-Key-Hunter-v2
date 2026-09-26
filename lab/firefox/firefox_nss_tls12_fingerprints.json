@@ -1,0 +1,29 @@
+{
+  "firefox_version": "136.0.2",
+  "hook_module": "libsoftokn3",
+  "hook_pattern_id": "nss136_tls12_p_hash_1ca00",
+  "hook_pattern_hex": "55 41 57 41 56 41 55 41 54 53 50 48 8B 05 96 F6 03 00 48 85 C0 74 17",
+  "required_pattern_matches": 1,
+  "static_function_offset": "0x0001ca00",
+  "label_reference": "master secret",
+  "artifacts": {
+    "firefox": {
+      "sha256": "385265da8818d293afd50ce410b678e3cf2079bb4e2d60231dfb818cd12b8b55"
+    },
+    "firefox-bin": {
+      "sha256": "4fc64e40bcfb40c45ab4f2957a7f3955ef66a004da98cdea35c315f32f8660ff"
+    },
+    "libssl3": {
+      "sha256": "41b76c48fff44d62e34b463e52d1a4842f1b8c39711e6e1ac77ae6dbc3906f57",
+      "build_id": "25bf915d26112095d760d5826114e734620c399d"
+    },
+    "libnss3": {
+      "sha256": "c3685d36c136c1688029e88f884942e1860e378efe04b63257e78536e517cca2",
+      "build_id": "73d61b934871b1b1f8a31c5449591e6c1fba1f1b"
+    },
+    "libsoftokn3": {
+      "sha256": "064c24743abe22bc8c9b87c6f8c4d7e8facc66d94a73b7ed9702e1d2733d2fe7",
+      "build_id": "31e5530c1738a4fc6066623dea8554f39b0c11f4"
+    }
+  }
+}

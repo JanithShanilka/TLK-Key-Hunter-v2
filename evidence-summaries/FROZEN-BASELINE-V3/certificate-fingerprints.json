@@ -1,0 +1,40 @@
+{
+  "ca_certificate": {
+    "path": "/opt/tlskeyhunter/frozen-cert-v1/ca.cert.pem",
+    "sha256": "e6dad090864bdeacec3ec7d954506165b94bb4fb1b831f2c9b555fcb3b108d7d"
+  },
+  "ca_fingerprint": {
+    "command": [
+      "openssl",
+      "x509",
+      "-in",
+      "/opt/tlskeyhunter/frozen-cert-v1/ca.cert.pem",
+      "-noout",
+      "-fingerprint",
+      "-sha256"
+    ],
+    "exit_code": 0,
+    "output": "sha256 Fingerprint=87:F9:C9:2A:3B:12:97:5D:EA:07:CE:F0:1D:BE:6E:6B:47:BD:22:E1:20:67:5A:77:9A:F1:57:6E:98:DE:F3:10"
+  },
+  "server_certificate": {
+    "path": "/opt/tlskeyhunter/frozen-cert-v1/server.cert.pem",
+    "sha256": "988d5451faed71548342a86ad80d47a5f53fd7e3914bdf05f01b27f581808374"
+  },
+  "server_fingerprint": {
+    "command": [
+      "openssl",
+      "x509",
+      "-in",
+      "/opt/tlskeyhunter/frozen-cert-v1/server.cert.pem",
+      "-noout",
+      "-fingerprint",
+      "-sha256"
+    ],
+    "exit_code": 0,
+    "output": "sha256 Fingerprint=3B:8A:3C:7B:D2:3E:FE:16:10:4C:BB:84:71:8C:7C:03:9C:D7:E2:74:F0:4E:82:B5:15:2A:5B:96:B0:C4:C0:99"
+  },
+  "server_private_key": {
+    "path": "/opt/tlskeyhunter/frozen-cert-v1/server.key.pem",
+    "sha256": "7afd0edba6c5afdc2dda2db549106083f71ff5ecebb9f15ee8cf71f39e3f9ce4"
+  }
+}

@@ -1,0 +1,4360 @@
+{
+  "schema_version": 1,
+  "fixture_design": {
+    "groups": 12,
+    "runs_per_group": 10,
+    "total_runs_per_configuration": 120,
+    "expected_secret_length": 32,
+    "hardcoded_argument_index": 9,
+    "first_run_per_group": "true candidate has high entropy; decoys are zero-filled",
+    "later_runs": "all candidates are entropy-eligible; stable argument position disambiguates"
+  },
+  "summary": [
+    {
+      "configuration": "A_hardcoded",
+      "correct": 10,
+      "total": 120,
+      "argument_identification_accuracy": 0.08333333333333333
+    },
+    {
+      "configuration": "B_length_only",
+      "correct": 10,
+      "total": 120,
+      "argument_identification_accuracy": 0.08333333333333333
+    },
+    {
+      "configuration": "C_length_entropy",
+      "correct": 21,
+      "total": 120,
+      "argument_identification_accuracy": 0.175
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "correct": 120,
+      "total": 120,
+      "argument_identification_accuracy": 1
+    }
+  ],
+  "rows": [
+    {
+      "configuration": "A_hardcoded",
+      "group": 0,
+      "run": 1,
+      "true_argument_index": 0,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 0,
+      "run": 2,
+      "true_argument_index": 0,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 0,
+      "run": 3,
+      "true_argument_index": 0,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 0,
+      "run": 4,
+      "true_argument_index": 0,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 0,
+      "run": 5,
+      "true_argument_index": 0,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 0,
+      "run": 6,
+      "true_argument_index": 0,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 0,
+      "run": 7,
+      "true_argument_index": 0,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 0,
+      "run": 8,
+      "true_argument_index": 0,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 0,
+      "run": 9,
+      "true_argument_index": 0,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 0,
+      "run": 10,
+      "true_argument_index": 0,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 1,
+      "run": 1,
+      "true_argument_index": 1,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 1,
+      "run": 2,
+      "true_argument_index": 1,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 1,
+      "run": 3,
+      "true_argument_index": 1,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 1,
+      "run": 4,
+      "true_argument_index": 1,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 1,
+      "run": 5,
+      "true_argument_index": 1,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 1,
+      "run": 6,
+      "true_argument_index": 1,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 1,
+      "run": 7,
+      "true_argument_index": 1,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 1,
+      "run": 8,
+      "true_argument_index": 1,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 1,
+      "run": 9,
+      "true_argument_index": 1,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 1,
+      "run": 10,
+      "true_argument_index": 1,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 2,
+      "run": 1,
+      "true_argument_index": 2,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 2,
+      "run": 2,
+      "true_argument_index": 2,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 2,
+      "run": 3,
+      "true_argument_index": 2,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 2,
+      "run": 4,
+      "true_argument_index": 2,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 2,
+      "run": 5,
+      "true_argument_index": 2,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 2,
+      "run": 6,
+      "true_argument_index": 2,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 2,
+      "run": 7,
+      "true_argument_index": 2,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 2,
+      "run": 8,
+      "true_argument_index": 2,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 2,
+      "run": 9,
+      "true_argument_index": 2,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 2,
+      "run": 10,
+      "true_argument_index": 2,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 3,
+      "run": 1,
+      "true_argument_index": 3,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 3,
+      "run": 2,
+      "true_argument_index": 3,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 3,
+      "run": 3,
+      "true_argument_index": 3,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 3,
+      "run": 4,
+      "true_argument_index": 3,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 3,
+      "run": 5,
+      "true_argument_index": 3,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 3,
+      "run": 6,
+      "true_argument_index": 3,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 3,
+      "run": 7,
+      "true_argument_index": 3,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 3,
+      "run": 8,
+      "true_argument_index": 3,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 3,
+      "run": 9,
+      "true_argument_index": 3,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 3,
+      "run": 10,
+      "true_argument_index": 3,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 4,
+      "run": 1,
+      "true_argument_index": 4,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 4,
+      "run": 2,
+      "true_argument_index": 4,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 4,
+      "run": 3,
+      "true_argument_index": 4,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 4,
+      "run": 4,
+      "true_argument_index": 4,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 4,
+      "run": 5,
+      "true_argument_index": 4,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 4,
+      "run": 6,
+      "true_argument_index": 4,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 4,
+      "run": 7,
+      "true_argument_index": 4,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 4,
+      "run": 8,
+      "true_argument_index": 4,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 4,
+      "run": 9,
+      "true_argument_index": 4,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 4,
+      "run": 10,
+      "true_argument_index": 4,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 5,
+      "run": 1,
+      "true_argument_index": 5,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 5,
+      "run": 2,
+      "true_argument_index": 5,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 5,
+      "run": 3,
+      "true_argument_index": 5,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 5,
+      "run": 4,
+      "true_argument_index": 5,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 5,
+      "run": 5,
+      "true_argument_index": 5,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 5,
+      "run": 6,
+      "true_argument_index": 5,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 5,
+      "run": 7,
+      "true_argument_index": 5,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 5,
+      "run": 8,
+      "true_argument_index": 5,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 5,
+      "run": 9,
+      "true_argument_index": 5,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 5,
+      "run": 10,
+      "true_argument_index": 5,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 6,
+      "run": 1,
+      "true_argument_index": 6,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 6,
+      "run": 2,
+      "true_argument_index": 6,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 6,
+      "run": 3,
+      "true_argument_index": 6,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 6,
+      "run": 4,
+      "true_argument_index": 6,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 6,
+      "run": 5,
+      "true_argument_index": 6,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 6,
+      "run": 6,
+      "true_argument_index": 6,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 6,
+      "run": 7,
+      "true_argument_index": 6,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 6,
+      "run": 8,
+      "true_argument_index": 6,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 6,
+      "run": 9,
+      "true_argument_index": 6,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 6,
+      "run": 10,
+      "true_argument_index": 6,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 7,
+      "run": 1,
+      "true_argument_index": 7,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 7,
+      "run": 2,
+      "true_argument_index": 7,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 7,
+      "run": 3,
+      "true_argument_index": 7,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 7,
+      "run": 4,
+      "true_argument_index": 7,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 7,
+      "run": 5,
+      "true_argument_index": 7,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 7,
+      "run": 6,
+      "true_argument_index": 7,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 7,
+      "run": 7,
+      "true_argument_index": 7,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 7,
+      "run": 8,
+      "true_argument_index": 7,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 7,
+      "run": 9,
+      "true_argument_index": 7,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 7,
+      "run": 10,
+      "true_argument_index": 7,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 8,
+      "run": 1,
+      "true_argument_index": 8,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 8,
+      "run": 2,
+      "true_argument_index": 8,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 8,
+      "run": 3,
+      "true_argument_index": 8,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 8,
+      "run": 4,
+      "true_argument_index": 8,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 8,
+      "run": 5,
+      "true_argument_index": 8,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 8,
+      "run": 6,
+      "true_argument_index": 8,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 8,
+      "run": 7,
+      "true_argument_index": 8,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 8,
+      "run": 8,
+      "true_argument_index": 8,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 8,
+      "run": 9,
+      "true_argument_index": 8,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 8,
+      "run": 10,
+      "true_argument_index": 8,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 9,
+      "run": 1,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": true
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 9,
+      "run": 2,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": true
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 9,
+      "run": 3,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": true
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 9,
+      "run": 4,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": true
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 9,
+      "run": 5,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": true
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 9,
+      "run": 6,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": true
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 9,
+      "run": 7,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": true
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 9,
+      "run": 8,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": true
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 9,
+      "run": 9,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": true
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 9,
+      "run": 10,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": true
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 10,
+      "run": 1,
+      "true_argument_index": 10,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 10,
+      "run": 2,
+      "true_argument_index": 10,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 10,
+      "run": 3,
+      "true_argument_index": 10,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 10,
+      "run": 4,
+      "true_argument_index": 10,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 10,
+      "run": 5,
+      "true_argument_index": 10,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 10,
+      "run": 6,
+      "true_argument_index": 10,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 10,
+      "run": 7,
+      "true_argument_index": 10,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 10,
+      "run": 8,
+      "true_argument_index": 10,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 10,
+      "run": 9,
+      "true_argument_index": 10,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 10,
+      "run": 10,
+      "true_argument_index": 10,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 11,
+      "run": 1,
+      "true_argument_index": 11,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 11,
+      "run": 2,
+      "true_argument_index": 11,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 11,
+      "run": 3,
+      "true_argument_index": 11,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 11,
+      "run": 4,
+      "true_argument_index": 11,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 11,
+      "run": 5,
+      "true_argument_index": 11,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 11,
+      "run": 6,
+      "true_argument_index": 11,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 11,
+      "run": 7,
+      "true_argument_index": 11,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 11,
+      "run": 8,
+      "true_argument_index": 11,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 11,
+      "run": 9,
+      "true_argument_index": 11,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "A_hardcoded",
+      "group": 11,
+      "run": 10,
+      "true_argument_index": 11,
+      "selected_argument_index": 9,
+      "score": null,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 0,
+      "run": 1,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": true
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 0,
+      "run": 2,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": true
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 0,
+      "run": 3,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": true
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 0,
+      "run": 4,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": true
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 0,
+      "run": 5,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": true
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 0,
+      "run": 6,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": true
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 0,
+      "run": 7,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": true
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 0,
+      "run": 8,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": true
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 0,
+      "run": 9,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": true
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 0,
+      "run": 10,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": true
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 1,
+      "run": 1,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 1,
+      "run": 2,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 1,
+      "run": 3,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 1,
+      "run": 4,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 1,
+      "run": 5,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 1,
+      "run": 6,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 1,
+      "run": 7,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 1,
+      "run": 8,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 1,
+      "run": 9,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 1,
+      "run": 10,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 2,
+      "run": 1,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 2,
+      "run": 2,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 2,
+      "run": 3,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 2,
+      "run": 4,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 2,
+      "run": 5,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 2,
+      "run": 6,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 2,
+      "run": 7,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 2,
+      "run": 8,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 2,
+      "run": 9,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 2,
+      "run": 10,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 3,
+      "run": 1,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 3,
+      "run": 2,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 3,
+      "run": 3,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 3,
+      "run": 4,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 3,
+      "run": 5,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 3,
+      "run": 6,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 3,
+      "run": 7,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 3,
+      "run": 8,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 3,
+      "run": 9,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 3,
+      "run": 10,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 4,
+      "run": 1,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 4,
+      "run": 2,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 4,
+      "run": 3,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 4,
+      "run": 4,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 4,
+      "run": 5,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 4,
+      "run": 6,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 4,
+      "run": 7,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 4,
+      "run": 8,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 4,
+      "run": 9,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 4,
+      "run": 10,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 5,
+      "run": 1,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 5,
+      "run": 2,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 5,
+      "run": 3,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 5,
+      "run": 4,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 5,
+      "run": 5,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 5,
+      "run": 6,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 5,
+      "run": 7,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 5,
+      "run": 8,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 5,
+      "run": 9,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 5,
+      "run": 10,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 6,
+      "run": 1,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 6,
+      "run": 2,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 6,
+      "run": 3,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 6,
+      "run": 4,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 6,
+      "run": 5,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 6,
+      "run": 6,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 6,
+      "run": 7,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 6,
+      "run": 8,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 6,
+      "run": 9,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 6,
+      "run": 10,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 7,
+      "run": 1,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 7,
+      "run": 2,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 7,
+      "run": 3,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 7,
+      "run": 4,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 7,
+      "run": 5,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 7,
+      "run": 6,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 7,
+      "run": 7,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 7,
+      "run": 8,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 7,
+      "run": 9,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 7,
+      "run": 10,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 8,
+      "run": 1,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 8,
+      "run": 2,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 8,
+      "run": 3,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 8,
+      "run": 4,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 8,
+      "run": 5,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 8,
+      "run": 6,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 8,
+      "run": 7,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 8,
+      "run": 8,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 8,
+      "run": 9,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 8,
+      "run": 10,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 9,
+      "run": 1,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 9,
+      "run": 2,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 9,
+      "run": 3,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 9,
+      "run": 4,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 9,
+      "run": 5,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 9,
+      "run": 6,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 9,
+      "run": 7,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 9,
+      "run": 8,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 9,
+      "run": 9,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 9,
+      "run": 10,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 10,
+      "run": 1,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 10,
+      "run": 2,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 10,
+      "run": 3,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 10,
+      "run": 4,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 10,
+      "run": 5,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 10,
+      "run": 6,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 10,
+      "run": 7,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 10,
+      "run": 8,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 10,
+      "run": 9,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 10,
+      "run": 10,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 11,
+      "run": 1,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 11,
+      "run": 2,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 11,
+      "run": 3,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 11,
+      "run": 4,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 11,
+      "run": 5,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 11,
+      "run": 6,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 11,
+      "run": 7,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 11,
+      "run": 8,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 11,
+      "run": 9,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "B_length_only",
+      "group": 11,
+      "run": 10,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 40,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 0,
+      "run": 1,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 0,
+      "run": 2,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 0,
+      "run": 3,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 0,
+      "run": 4,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 0,
+      "run": 5,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 0,
+      "run": 6,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 0,
+      "run": 7,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 0,
+      "run": 8,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 0,
+      "run": 9,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 0,
+      "run": 10,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 1,
+      "run": 1,
+      "true_argument_index": 1,
+      "selected_argument_index": 1,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 1,
+      "run": 2,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 1,
+      "run": 3,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 1,
+      "run": 4,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 1,
+      "run": 5,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 1,
+      "run": 6,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 1,
+      "run": 7,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 1,
+      "run": 8,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 1,
+      "run": 9,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 1,
+      "run": 10,
+      "true_argument_index": 1,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 2,
+      "run": 1,
+      "true_argument_index": 2,
+      "selected_argument_index": 2,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 2,
+      "run": 2,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 2,
+      "run": 3,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 2,
+      "run": 4,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 2,
+      "run": 5,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 2,
+      "run": 6,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 2,
+      "run": 7,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 2,
+      "run": 8,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 2,
+      "run": 9,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 2,
+      "run": 10,
+      "true_argument_index": 2,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 3,
+      "run": 1,
+      "true_argument_index": 3,
+      "selected_argument_index": 3,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 3,
+      "run": 2,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 3,
+      "run": 3,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 3,
+      "run": 4,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 3,
+      "run": 5,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 3,
+      "run": 6,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 3,
+      "run": 7,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 3,
+      "run": 8,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 3,
+      "run": 9,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 3,
+      "run": 10,
+      "true_argument_index": 3,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 4,
+      "run": 1,
+      "true_argument_index": 4,
+      "selected_argument_index": 4,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 4,
+      "run": 2,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 4,
+      "run": 3,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 4,
+      "run": 4,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 4,
+      "run": 5,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 4,
+      "run": 6,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 4,
+      "run": 7,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 4,
+      "run": 8,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 4,
+      "run": 9,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 4,
+      "run": 10,
+      "true_argument_index": 4,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 5,
+      "run": 1,
+      "true_argument_index": 5,
+      "selected_argument_index": 5,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 5,
+      "run": 2,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 5,
+      "run": 3,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 5,
+      "run": 4,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 5,
+      "run": 5,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 5,
+      "run": 6,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 5,
+      "run": 7,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 5,
+      "run": 8,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 5,
+      "run": 9,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 5,
+      "run": 10,
+      "true_argument_index": 5,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 6,
+      "run": 1,
+      "true_argument_index": 6,
+      "selected_argument_index": 6,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 6,
+      "run": 2,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 6,
+      "run": 3,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 6,
+      "run": 4,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 6,
+      "run": 5,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 6,
+      "run": 6,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 6,
+      "run": 7,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 6,
+      "run": 8,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 6,
+      "run": 9,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 6,
+      "run": 10,
+      "true_argument_index": 6,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 7,
+      "run": 1,
+      "true_argument_index": 7,
+      "selected_argument_index": 7,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 7,
+      "run": 2,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 7,
+      "run": 3,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 7,
+      "run": 4,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 7,
+      "run": 5,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 7,
+      "run": 6,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 7,
+      "run": 7,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 7,
+      "run": 8,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 7,
+      "run": 9,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 7,
+      "run": 10,
+      "true_argument_index": 7,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 8,
+      "run": 1,
+      "true_argument_index": 8,
+      "selected_argument_index": 8,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 8,
+      "run": 2,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 8,
+      "run": 3,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 8,
+      "run": 4,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 8,
+      "run": 5,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 8,
+      "run": 6,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 8,
+      "run": 7,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 8,
+      "run": 8,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 8,
+      "run": 9,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 8,
+      "run": 10,
+      "true_argument_index": 8,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 9,
+      "run": 1,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 9,
+      "run": 2,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 9,
+      "run": 3,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 9,
+      "run": 4,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 9,
+      "run": 5,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 9,
+      "run": 6,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 9,
+      "run": 7,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 9,
+      "run": 8,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 9,
+      "run": 9,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 9,
+      "run": 10,
+      "true_argument_index": 9,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 10,
+      "run": 1,
+      "true_argument_index": 10,
+      "selected_argument_index": 10,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 10,
+      "run": 2,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 10,
+      "run": 3,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 10,
+      "run": 4,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 10,
+      "run": 5,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 10,
+      "run": 6,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 10,
+      "run": 7,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 10,
+      "run": 8,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 10,
+      "run": 9,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 10,
+      "run": 10,
+      "true_argument_index": 10,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 11,
+      "run": 1,
+      "true_argument_index": 11,
+      "selected_argument_index": 11,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 11,
+      "run": 2,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 11,
+      "run": 3,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 11,
+      "run": 4,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 11,
+      "run": 5,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 11,
+      "run": 6,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 11,
+      "run": 7,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 11,
+      "run": 8,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 11,
+      "run": 9,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "C_length_entropy",
+      "group": 11,
+      "run": 10,
+      "true_argument_index": 11,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": false
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 0,
+      "run": 1,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 0,
+      "run": 2,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 0,
+      "run": 3,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 0,
+      "run": 4,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 0,
+      "run": 5,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 0,
+      "run": 6,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 0,
+      "run": 7,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 0,
+      "run": 8,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 0,
+      "run": 9,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 0,
+      "run": 10,
+      "true_argument_index": 0,
+      "selected_argument_index": 0,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 1,
+      "run": 1,
+      "true_argument_index": 1,
+      "selected_argument_index": 1,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 1,
+      "run": 2,
+      "true_argument_index": 1,
+      "selected_argument_index": 1,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 1,
+      "run": 3,
+      "true_argument_index": 1,
+      "selected_argument_index": 1,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 1,
+      "run": 4,
+      "true_argument_index": 1,
+      "selected_argument_index": 1,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 1,
+      "run": 5,
+      "true_argument_index": 1,
+      "selected_argument_index": 1,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 1,
+      "run": 6,
+      "true_argument_index": 1,
+      "selected_argument_index": 1,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 1,
+      "run": 7,
+      "true_argument_index": 1,
+      "selected_argument_index": 1,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 1,
+      "run": 8,
+      "true_argument_index": 1,
+      "selected_argument_index": 1,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 1,
+      "run": 9,
+      "true_argument_index": 1,
+      "selected_argument_index": 1,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 1,
+      "run": 10,
+      "true_argument_index": 1,
+      "selected_argument_index": 1,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 2,
+      "run": 1,
+      "true_argument_index": 2,
+      "selected_argument_index": 2,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 2,
+      "run": 2,
+      "true_argument_index": 2,
+      "selected_argument_index": 2,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 2,
+      "run": 3,
+      "true_argument_index": 2,
+      "selected_argument_index": 2,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 2,
+      "run": 4,
+      "true_argument_index": 2,
+      "selected_argument_index": 2,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 2,
+      "run": 5,
+      "true_argument_index": 2,
+      "selected_argument_index": 2,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 2,
+      "run": 6,
+      "true_argument_index": 2,
+      "selected_argument_index": 2,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 2,
+      "run": 7,
+      "true_argument_index": 2,
+      "selected_argument_index": 2,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 2,
+      "run": 8,
+      "true_argument_index": 2,
+      "selected_argument_index": 2,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 2,
+      "run": 9,
+      "true_argument_index": 2,
+      "selected_argument_index": 2,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 2,
+      "run": 10,
+      "true_argument_index": 2,
+      "selected_argument_index": 2,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 3,
+      "run": 1,
+      "true_argument_index": 3,
+      "selected_argument_index": 3,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 3,
+      "run": 2,
+      "true_argument_index": 3,
+      "selected_argument_index": 3,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 3,
+      "run": 3,
+      "true_argument_index": 3,
+      "selected_argument_index": 3,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 3,
+      "run": 4,
+      "true_argument_index": 3,
+      "selected_argument_index": 3,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 3,
+      "run": 5,
+      "true_argument_index": 3,
+      "selected_argument_index": 3,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 3,
+      "run": 6,
+      "true_argument_index": 3,
+      "selected_argument_index": 3,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 3,
+      "run": 7,
+      "true_argument_index": 3,
+      "selected_argument_index": 3,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 3,
+      "run": 8,
+      "true_argument_index": 3,
+      "selected_argument_index": 3,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 3,
+      "run": 9,
+      "true_argument_index": 3,
+      "selected_argument_index": 3,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 3,
+      "run": 10,
+      "true_argument_index": 3,
+      "selected_argument_index": 3,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 4,
+      "run": 1,
+      "true_argument_index": 4,
+      "selected_argument_index": 4,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 4,
+      "run": 2,
+      "true_argument_index": 4,
+      "selected_argument_index": 4,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 4,
+      "run": 3,
+      "true_argument_index": 4,
+      "selected_argument_index": 4,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 4,
+      "run": 4,
+      "true_argument_index": 4,
+      "selected_argument_index": 4,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 4,
+      "run": 5,
+      "true_argument_index": 4,
+      "selected_argument_index": 4,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 4,
+      "run": 6,
+      "true_argument_index": 4,
+      "selected_argument_index": 4,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 4,
+      "run": 7,
+      "true_argument_index": 4,
+      "selected_argument_index": 4,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 4,
+      "run": 8,
+      "true_argument_index": 4,
+      "selected_argument_index": 4,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 4,
+      "run": 9,
+      "true_argument_index": 4,
+      "selected_argument_index": 4,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 4,
+      "run": 10,
+      "true_argument_index": 4,
+      "selected_argument_index": 4,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 5,
+      "run": 1,
+      "true_argument_index": 5,
+      "selected_argument_index": 5,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 5,
+      "run": 2,
+      "true_argument_index": 5,
+      "selected_argument_index": 5,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 5,
+      "run": 3,
+      "true_argument_index": 5,
+      "selected_argument_index": 5,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 5,
+      "run": 4,
+      "true_argument_index": 5,
+      "selected_argument_index": 5,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 5,
+      "run": 5,
+      "true_argument_index": 5,
+      "selected_argument_index": 5,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 5,
+      "run": 6,
+      "true_argument_index": 5,
+      "selected_argument_index": 5,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 5,
+      "run": 7,
+      "true_argument_index": 5,
+      "selected_argument_index": 5,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 5,
+      "run": 8,
+      "true_argument_index": 5,
+      "selected_argument_index": 5,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 5,
+      "run": 9,
+      "true_argument_index": 5,
+      "selected_argument_index": 5,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 5,
+      "run": 10,
+      "true_argument_index": 5,
+      "selected_argument_index": 5,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 6,
+      "run": 1,
+      "true_argument_index": 6,
+      "selected_argument_index": 6,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 6,
+      "run": 2,
+      "true_argument_index": 6,
+      "selected_argument_index": 6,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 6,
+      "run": 3,
+      "true_argument_index": 6,
+      "selected_argument_index": 6,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 6,
+      "run": 4,
+      "true_argument_index": 6,
+      "selected_argument_index": 6,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 6,
+      "run": 5,
+      "true_argument_index": 6,
+      "selected_argument_index": 6,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 6,
+      "run": 6,
+      "true_argument_index": 6,
+      "selected_argument_index": 6,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 6,
+      "run": 7,
+      "true_argument_index": 6,
+      "selected_argument_index": 6,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 6,
+      "run": 8,
+      "true_argument_index": 6,
+      "selected_argument_index": 6,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 6,
+      "run": 9,
+      "true_argument_index": 6,
+      "selected_argument_index": 6,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 6,
+      "run": 10,
+      "true_argument_index": 6,
+      "selected_argument_index": 6,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 7,
+      "run": 1,
+      "true_argument_index": 7,
+      "selected_argument_index": 7,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 7,
+      "run": 2,
+      "true_argument_index": 7,
+      "selected_argument_index": 7,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 7,
+      "run": 3,
+      "true_argument_index": 7,
+      "selected_argument_index": 7,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 7,
+      "run": 4,
+      "true_argument_index": 7,
+      "selected_argument_index": 7,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 7,
+      "run": 5,
+      "true_argument_index": 7,
+      "selected_argument_index": 7,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 7,
+      "run": 6,
+      "true_argument_index": 7,
+      "selected_argument_index": 7,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 7,
+      "run": 7,
+      "true_argument_index": 7,
+      "selected_argument_index": 7,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 7,
+      "run": 8,
+      "true_argument_index": 7,
+      "selected_argument_index": 7,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 7,
+      "run": 9,
+      "true_argument_index": 7,
+      "selected_argument_index": 7,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 7,
+      "run": 10,
+      "true_argument_index": 7,
+      "selected_argument_index": 7,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 8,
+      "run": 1,
+      "true_argument_index": 8,
+      "selected_argument_index": 8,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 8,
+      "run": 2,
+      "true_argument_index": 8,
+      "selected_argument_index": 8,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 8,
+      "run": 3,
+      "true_argument_index": 8,
+      "selected_argument_index": 8,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 8,
+      "run": 4,
+      "true_argument_index": 8,
+      "selected_argument_index": 8,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 8,
+      "run": 5,
+      "true_argument_index": 8,
+      "selected_argument_index": 8,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 8,
+      "run": 6,
+      "true_argument_index": 8,
+      "selected_argument_index": 8,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 8,
+      "run": 7,
+      "true_argument_index": 8,
+      "selected_argument_index": 8,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 8,
+      "run": 8,
+      "true_argument_index": 8,
+      "selected_argument_index": 8,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 8,
+      "run": 9,
+      "true_argument_index": 8,
+      "selected_argument_index": 8,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 8,
+      "run": 10,
+      "true_argument_index": 8,
+      "selected_argument_index": 8,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 9,
+      "run": 1,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 9,
+      "run": 2,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 9,
+      "run": 3,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 9,
+      "run": 4,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 9,
+      "run": 5,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 9,
+      "run": 6,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 9,
+      "run": 7,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 9,
+      "run": 8,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 9,
+      "run": 9,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 9,
+      "run": 10,
+      "true_argument_index": 9,
+      "selected_argument_index": 9,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 10,
+      "run": 1,
+      "true_argument_index": 10,
+      "selected_argument_index": 10,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 10,
+      "run": 2,
+      "true_argument_index": 10,
+      "selected_argument_index": 10,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 10,
+      "run": 3,
+      "true_argument_index": 10,
+      "selected_argument_index": 10,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 10,
+      "run": 4,
+      "true_argument_index": 10,
+      "selected_argument_index": 10,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 10,
+      "run": 5,
+      "true_argument_index": 10,
+      "selected_argument_index": 10,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 10,
+      "run": 6,
+      "true_argument_index": 10,
+      "selected_argument_index": 10,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 10,
+      "run": 7,
+      "true_argument_index": 10,
+      "selected_argument_index": 10,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 10,
+      "run": 8,
+      "true_argument_index": 10,
+      "selected_argument_index": 10,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 10,
+      "run": 9,
+      "true_argument_index": 10,
+      "selected_argument_index": 10,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 10,
+      "run": 10,
+      "true_argument_index": 10,
+      "selected_argument_index": 10,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 11,
+      "run": 1,
+      "true_argument_index": 11,
+      "selected_argument_index": 11,
+      "score": 75,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 11,
+      "run": 2,
+      "true_argument_index": 11,
+      "selected_argument_index": 11,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 11,
+      "run": 3,
+      "true_argument_index": 11,
+      "selected_argument_index": 11,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 11,
+      "run": 4,
+      "true_argument_index": 11,
+      "selected_argument_index": 11,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 11,
+      "run": 5,
+      "true_argument_index": 11,
+      "selected_argument_index": 11,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 11,
+      "run": 6,
+      "true_argument_index": 11,
+      "selected_argument_index": 11,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 11,
+      "run": 7,
+      "true_argument_index": 11,
+      "selected_argument_index": 11,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 11,
+      "run": 8,
+      "true_argument_index": 11,
+      "selected_argument_index": 11,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 11,
+      "run": 9,
+      "true_argument_index": 11,
+      "selected_argument_index": 11,
+      "score": 85,
+      "exact": true
+    },
+    {
+      "configuration": "D_length_entropy_consistency",
+      "group": 11,
+      "run": 10,
+      "true_argument_index": 11,
+      "selected_argument_index": 11,
+      "score": 85,
+      "exact": true
+    }
+  ]
+}

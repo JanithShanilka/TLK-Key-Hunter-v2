@@ -1,0 +1,200 @@
+{
+  "attempted_sessions": 40,
+  "by_method": {
+    "A": {
+      "ambiguous": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": {
+          "lower": 0.0,
+          "upper": 0.16112515805281938
+        }
+      },
+      "authenticated_pcap_decryption": {
+        "count": 10,
+        "rate": 0.5,
+        "wilson_95": {
+          "lower": 0.29929800819821234,
+          "upper": 0.7007019918017877
+        }
+      },
+      "candidate_selection_success": {
+        "count": 15,
+        "rate": 0.75,
+        "wilson_95": {
+          "lower": 0.531299122381256,
+          "upper": 0.8881382985923343
+        }
+      },
+      "complete_end_to_end_recovery": {
+        "count": 10,
+        "rate": 0.5,
+        "wilson_95": {
+          "lower": 0.29929800819821234,
+          "upper": 0.7007019918017877
+        }
+      },
+      "exact_secret_match": {
+        "count": 10,
+        "rate": 0.5,
+        "wilson_95": {
+          "lower": 0.29929800819821234,
+          "upper": 0.7007019918017877
+        }
+      },
+      "false_candidate": {
+        "count": 5,
+        "rate": 0.25,
+        "wilson_95": {
+          "lower": 0.11186170140766569,
+          "upper": 0.46870087761874407
+        }
+      },
+      "no_candidate": {
+        "count": 5,
+        "rate": 0.25,
+        "wilson_95": {
+          "lower": 0.11186170140766569,
+          "upper": 0.46870087761874407
+        }
+      }
+    },
+    "D": {
+      "ambiguous": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": {
+          "lower": 0.0,
+          "upper": 0.16112515805281938
+        }
+      },
+      "authenticated_pcap_decryption": {
+        "count": 20,
+        "rate": 1.0,
+        "wilson_95": {
+          "lower": 0.8388748419471806,
+          "upper": 1.0
+        }
+      },
+      "candidate_selection_success": {
+        "count": 20,
+        "rate": 1.0,
+        "wilson_95": {
+          "lower": 0.8388748419471806,
+          "upper": 1.0
+        }
+      },
+      "complete_end_to_end_recovery": {
+        "count": 20,
+        "rate": 1.0,
+        "wilson_95": {
+          "lower": 0.8388748419471806,
+          "upper": 1.0
+        }
+      },
+      "exact_secret_match": {
+        "count": 20,
+        "rate": 1.0,
+        "wilson_95": {
+          "lower": 0.8388748419471806,
+          "upper": 1.0
+        }
+      },
+      "false_candidate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": {
+          "lower": 0.0,
+          "upper": 0.16112515805281938
+        }
+      },
+      "no_candidate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": {
+          "lower": 0.0,
+          "upper": 0.16112515805281938
+        }
+      }
+    }
+  },
+  "campaign_id": "ARG-RANKER-LIVE-FINAL-001",
+  "completed_at": "2026-08-30T14:07:31.208166Z",
+  "design": {
+    "libraries": [
+      "openssl",
+      "wolfssl"
+    ],
+    "methods": [
+      "A",
+      "D"
+    ],
+    "planned_attempts": 40,
+    "protocols": [
+      "TLS1.2",
+      "TLS1.3"
+    ],
+    "sessions_per_cell": 5
+  },
+  "manifest_valid_sessions": 40,
+  "overall": {
+    "ambiguous": {
+      "count": 0,
+      "rate": 0.0,
+      "wilson_95": {
+        "lower": 0.0,
+        "upper": 0.08762160119728664
+      }
+    },
+    "authenticated_pcap_decryption": {
+      "count": 30,
+      "rate": 0.75,
+      "wilson_95": {
+        "lower": 0.5980603857923198,
+        "upper": 0.8581288136090369
+      }
+    },
+    "candidate_selection_success": {
+      "count": 35,
+      "rate": 0.875,
+      "wilson_95": {
+        "lower": 0.7388788016114891,
+        "upper": 0.9454049974905461
+      }
+    },
+    "complete_end_to_end_recovery": {
+      "count": 30,
+      "rate": 0.75,
+      "wilson_95": {
+        "lower": 0.5980603857923198,
+        "upper": 0.8581288136090369
+      }
+    },
+    "exact_secret_match": {
+      "count": 30,
+      "rate": 0.75,
+      "wilson_95": {
+        "lower": 0.5980603857923198,
+        "upper": 0.8581288136090369
+      }
+    },
+    "false_candidate": {
+      "count": 5,
+      "rate": 0.125,
+      "wilson_95": {
+        "lower": 0.05459500250945402,
+        "upper": 0.261121198388511
+      }
+    },
+    "no_candidate": {
+      "count": 5,
+      "rate": 0.125,
+      "wilson_95": {
+        "lower": 0.05459500250945402,
+        "upper": 0.261121198388511
+      }
+    }
+  },
+  "schema": "tlskh-live-ad-study-v1",
+  "started_at": "2026-08-30T13:59:57.356851Z"
+}

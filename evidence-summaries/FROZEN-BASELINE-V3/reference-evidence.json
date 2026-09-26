@@ -1,0 +1,196 @@
+{
+  "BASELINE-WOLFSSL-TLS12-014": {
+    "manifest_sha256": "f5a777730b27eed2f45647586bf17d386f5fe2bb0aff5bd9c667b790ac83c6eb",
+    "manifest_valid": true,
+    "verification": {
+      "capture_exit": 0,
+      "case_id": "BASELINE-WOLFSSL-TLS12-014",
+      "checks": {
+        "all_ground_truth_labels_matched": true,
+        "complete_tls_handshake": true,
+        "exact_candidate_equality": true,
+        "exact_request_path_recovered": true,
+        "exact_response_marker_recovered": true,
+        "frida_candidate_event": true,
+        "server_event": true,
+        "tshark_decryption": true
+      },
+      "client_hello_frames": [
+        "4"
+      ],
+      "frida_candidate_count": 1,
+      "frida_exit": 1,
+      "ground_truth_label_count": 1,
+      "protocol": "TLS1.2",
+      "run_id": "RUN-01",
+      "server_exit": 0,
+      "server_hello_frames": [
+        "6"
+      ],
+      "status": "Accepted",
+      "verified_candidate_count": 1
+    }
+  },
+  "BASELINE-WOLFSSL-TLS13-001": {
+    "manifest_sha256": "d931425ab92656274b373e68698daaddb8d441fd74e34c706f50b8af2584ddab",
+    "manifest_valid": true,
+    "verification": {
+      "capture_exit": 0,
+      "case_id": "BASELINE-WOLFSSL-TLS13-001",
+      "checks": {
+        "all_ground_truth_labels_matched": true,
+        "complete_tls_handshake": true,
+        "exact_candidate_equality": true,
+        "exact_request_path_recovered": true,
+        "exact_response_marker_recovered": true,
+        "frida_candidate_event": true,
+        "server_event": true,
+        "tshark_decryption": true
+      },
+      "client_hello_frames": [
+        "4"
+      ],
+      "frida_candidate_count": 4,
+      "frida_exit": 1,
+      "ground_truth_label_count": 4,
+      "protocol": "TLS1.3",
+      "run_id": "RUN-01",
+      "server_exit": 0,
+      "server_hello_frames": [
+        "6"
+      ],
+      "status": "Accepted",
+      "verified_candidate_count": 4
+    }
+  },
+  "FIREFOX-NSS-TLS13-PILOT-CAMPAIGN-001-R01-S001": {
+    "manifest_sha256": "1f227bca0b4bfdb5e37dadb1c9bfc74d8b01d0b3a2e451140013b190a9668df7",
+    "manifest_valid": true,
+    "verification": {
+      "browser_workload_event": true,
+      "case_id": "FIREFOX-NSS-TLS13-PILOT-CAMPAIGN-001-R01-S001",
+      "complete_tls_handshake": true,
+      "development_ground_truth_enabled": false,
+      "exact_request_path_recovered": true,
+      "exact_response_marker_recovered": true,
+      "frida_candidate_event": true,
+      "handshake_frames": [
+        "4",
+        "6",
+        "20",
+        "22"
+      ],
+      "mode": "measurement",
+      "run_id": "RUN-01",
+      "server_event": true,
+      "status": "Eligible and fully recovered",
+      "tshark_decryption": true,
+      "verified_candidate_count": 10
+    }
+  },
+  "FIREFOX-NSS-TLS13-PILOT-CAMPAIGN-001-R01-S002": {
+    "manifest_sha256": "e7f4c940949e83b812e40dd557d806161c735d3a10f05f236c6f13315bcb300f",
+    "manifest_valid": true,
+    "verification": {
+      "browser_workload_event": true,
+      "case_id": "FIREFOX-NSS-TLS13-PILOT-CAMPAIGN-001-R01-S002",
+      "complete_tls_handshake": true,
+      "development_ground_truth_enabled": false,
+      "exact_request_path_recovered": true,
+      "exact_response_marker_recovered": true,
+      "frida_candidate_event": true,
+      "handshake_frames": [
+        "4",
+        "6",
+        "20",
+        "22"
+      ],
+      "mode": "measurement",
+      "run_id": "RUN-01",
+      "server_event": true,
+      "status": "Eligible and fully recovered",
+      "tshark_decryption": true,
+      "verified_candidate_count": 10
+    }
+  },
+  "FIREFOX-NSS-TLS13-PILOT-CAMPAIGN-001-R01-S003": {
+    "manifest_sha256": "be1f8f0d18b126f2e4c3bbcbc24ddd4476e84882ab58e818c8fecadbd2943203",
+    "manifest_valid": true,
+    "verification": {
+      "browser_workload_event": true,
+      "case_id": "FIREFOX-NSS-TLS13-PILOT-CAMPAIGN-001-R01-S003",
+      "complete_tls_handshake": true,
+      "development_ground_truth_enabled": false,
+      "exact_request_path_recovered": true,
+      "exact_response_marker_recovered": true,
+      "frida_candidate_event": true,
+      "handshake_frames": [
+        "4",
+        "6",
+        "20",
+        "22"
+      ],
+      "mode": "measurement",
+      "run_id": "RUN-01",
+      "server_event": true,
+      "status": "Eligible and fully recovered",
+      "tshark_decryption": true,
+      "verified_candidate_count": 10
+    }
+  },
+  "FIREFOX-NSS-TLS13-PILOT-CAMPAIGN-001-R01-S004": {
+    "manifest_sha256": "98b7ff2726f48a8751a1e9acbba9441e938591a5ccfad71e83683ddb62dc32c1",
+    "manifest_valid": true,
+    "verification": {
+      "browser_workload_event": true,
+      "case_id": "FIREFOX-NSS-TLS13-PILOT-CAMPAIGN-001-R01-S004",
+      "complete_tls_handshake": true,
+      "development_ground_truth_enabled": false,
+      "exact_request_path_recovered": true,
+      "exact_response_marker_recovered": true,
+      "frida_candidate_event": true,
+      "handshake_frames": [
+        "4",
+        "6",
+        "20",
+        "22"
+      ],
+      "mode": "measurement",
+      "run_id": "RUN-01",
+      "server_event": true,
+      "status": "Eligible and fully recovered",
+      "tshark_decryption": true,
+      "verified_candidate_count": 10
+    }
+  },
+  "FIREFOX-NSS-TLS13-PILOT-CAMPAIGN-001-R01-S005": {
+    "manifest_sha256": "f0a89d56419ab2d3b9a7c56e21dada0e6b7715b9cb97414ff80e08aa1b1b22f1",
+    "manifest_valid": true,
+    "verification": {
+      "browser_workload_event": true,
+      "case_id": "FIREFOX-NSS-TLS13-PILOT-CAMPAIGN-001-R01-S005",
+      "complete_tls_handshake": true,
+      "development_ground_truth_enabled": false,
+      "exact_request_path_recovered": true,
+      "exact_response_marker_recovered": true,
+      "frida_candidate_event": true,
+      "handshake_frames": [
+        "4",
+        "6",
+        "20",
+        "22"
+      ],
+      "mode": "measurement",
+      "run_id": "RUN-01",
+      "server_event": true,
+      "status": "Eligible and fully recovered",
+      "tshark_decryption": true,
+      "verified_candidate_count": 10
+    }
+  },
+  "NEGATIVE-CONTROLS-FIREFOX-NSS-TLS13-004": {
+    "manifest_sha256": "b6aeaf744dfcc978b7718b464910757d05405ad26e44b6ed6a7fe57f8a6ad1b7",
+    "manifest_valid": true,
+    "verification": null
+  }
+}

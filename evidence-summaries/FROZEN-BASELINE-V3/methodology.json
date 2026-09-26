@@ -1,0 +1,31 @@
+{
+  "acceptance": [
+    "controlled browser workload event",
+    "controlled server event",
+    "complete TLS handshake",
+    "Frida candidate event",
+    "candidate ClientHello-random association",
+    "authenticated TShark HTTP decryption",
+    "exact request path recovery",
+    "exact response marker and nonce recovery"
+  ],
+  "browser_mode": "headless WebDriver BiDi over loopback",
+  "development_ground_truth_enabled": false,
+  "exclusion": [
+    "fingerprint policy rejection",
+    "pattern count other than one",
+    "browser or Frida failure",
+    "missing controlled server event",
+    "incomplete handshake",
+    "no candidate",
+    "candidate validation failure"
+  ],
+  "measurement_mode": true,
+  "protocol": "TLS1.3",
+  "required_tls13_labels": [
+    "CLIENT_HANDSHAKE_TRAFFIC_SECRET",
+    "SERVER_HANDSHAKE_TRAFFIC_SECRET",
+    "CLIENT_TRAFFIC_SECRET_0",
+    "SERVER_TRAFFIC_SECRET_0"
+  ]
+}
