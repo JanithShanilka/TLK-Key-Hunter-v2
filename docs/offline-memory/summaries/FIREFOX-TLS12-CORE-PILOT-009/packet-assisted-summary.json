@@ -1,0 +1,36 @@
+{
+  "candidate_count": 5,
+  "candidates_strictly_above_reference": 0,
+  "candidates_tied_with_reference": 5,
+  "case_id": "FIREFOX-TLS12-CORE-PILOT-009",
+  "complete_offline_recovery": true,
+  "core_sha256": "daa09aa02b9c50f560cf5f858b2a73eb8a9ca9af02a5df0eb02d9c126a74ea35",
+  "kind": "exploratory_single_case",
+  "one_bit_reference_control": {
+    "request": false,
+    "response": false,
+    "tshark_exit": 0
+  },
+  "pcap_sha256": "5d5cb17808f236945b64dc3de221740ac0e00151b3093e4b5fefa85e5e94480f",
+  "presence_audit_uses_reference": true,
+  "reference_comparison_after_selection_seal": true,
+  "reference_in_candidate_set": true,
+  "reference_literal_occurrences": 1,
+  "reference_literal_present_in_captured_segments": true,
+  "reference_only_decryption_sanity": {
+    "request": true,
+    "response": true,
+    "tshark_exit": 0
+  },
+  "reference_score": 75,
+  "selected_decryption": {
+    "request": true,
+    "response": true,
+    "tshark_exit": 0
+  },
+  "selected_exact_match": true,
+  "selected_hamming_distance_bits": 0,
+  "selection_method": "experimental_cka-value48_single_snapshot_pcap_validation",
+  "selection_status": "selected",
+  "selection_uses_pcap": true
+}

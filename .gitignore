@@ -21,3 +21,8 @@ certificates/
 .tools/
 tmp/
 *.log
+*.core
+core.*
+*.dump
+*.private.*
+*.keys
