@@ -113,6 +113,9 @@ def serve(args):
 def main(args):
     if os.geteuid() != 0:
         raise RuntimeError("Acquisition requires root in the controlled lab")
+    def stop_capture(signum, frame):
+        raise RuntimeError("Capture interrupted by campaign guard")
+    signal.signal(signal.SIGTERM, stop_capture)
     os.umask(0o077)
     case = args.case.resolve()
     private = args.reference.resolve()

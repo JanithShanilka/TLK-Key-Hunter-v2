@@ -81,3 +81,26 @@ On development case 008, CKA_VALUE enumeration produced five tied candidates inc
 Fresh case 009 was acquired after fixing the method and also produced five tied memory candidates, exactly one packet-validation pass, an exact independent reference match, and successful controlled request/response decryption. This is one held-out success, not an established success-rate estimate. Unique memory-only selection remained unsuccessful (abstention). Two sparse cores are retained; all pilot case directories occupy 940 MiB.
 
 `show_lab_evidence.py` generates a private HTML comparison from a completed, verified case. Its output contains actual lab secrets and is excluded by `*.private.*`; only the generator is versioned.
+
+## Bounded repeatability campaign
+
+`run_campaign.py` runs fresh localhost TLS 1.2 sessions sequentially. It snapshots and hashes the extraction scripts before starting, uses a new profile and case directory per attempt, preserves failures in the denominator, and records UTC times and stage logs. It never changes the extraction rules during the campaign. The runner requires root on the controlled lab host; ranking and packet validation still run as researcher without reference access.
+
+The user-selected schedule is 20 sessions with a minimum ten-minute start-to-start interval. Every completed verification is saved before deleting that case's large raw core and disposable profile/runtime. Small PCAPs, sealed candidate lists, isolated references, acquisition metadata and verification outputs remain private for later analysis. Deleted dumps cannot be rescanned with a future extractor. A setup/tool failure stops the campaign and preserves its incomplete evidence for inspection; no automatic retry hides failed attempts.
+
+```sh
+python3 tools/run_campaign.py \
+  --workspace /home/researcher/research/TLSKeyHunter-memory-pilot \
+  --campaign-id TLS12-REPEAT-20260928-A \
+  --count 20 --interval-seconds 600 \
+  --budget-gib 8 --minimum-free-gib 20 \
+  --lab-disable-socket-sandbox --lab-accept-insecure-certs
+```
+
+Run under the lab's service manager to survive SSH disconnects. The runner locks against another campaign, refuses an existing campaign ID, checks allocated storage during stages, and stops if the case budget or free-space guard is reached. These are operational guards, not a filesystem quota. No overlapping captures are scheduled. The approved compatibility flags remain explicit.
+
+Under `campaigns/<campaign-id>/`, `manifest.json` records the frozen method and settings, `summary.json` records progress and storage, `runs.json`/`runs.csv` retain one row per attempted session, and individual result files preserve per-case results. Private evidence remains under `cases/` and `/root/tlkh-memory-reference/`. No bulk raw-data upload is part of the campaign. To stop gracefully after the current case, create an empty `STOP` file in the campaign directory. The runner will not resume a stopped campaign automatically.
+
+Tests: `python3 tests/test_offline_campaign.py` checks failure accounting, storage decisions and stage failure handling. Existing memory-reader tests remain separate.
+
+The first campaign attempt A-001 stopped because the frozen script directory lacked researcher traversal permission. Its original failure is preserved; subsequent analysis of the same dump succeeded and is recorded separately. Continuation B schedules the remaining 19 sessions, so there are 20 captures total across A and B. The runner now sets the snapshot directory mode explicitly after creation. See the versioned work log for provenance and retention outcomes.
