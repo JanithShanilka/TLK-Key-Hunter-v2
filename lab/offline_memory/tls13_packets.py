@@ -2,7 +2,9 @@
 """TLS 1.3 packet helpers used without reference secrets during selection."""
 import hashlib
 import re
+import shutil
 import subprocess
+import tempfile
 from pathlib import Path
 
 SUITES = {
@@ -13,14 +15,17 @@ SUITES = {
 
 
 def tshark_fields(pcap, display, fields, keylog=None):
-    command = ["tshark", "-r", str(pcap)]
-    if keylog is not None:
-        command += ["-o", f"tls.keylog_file:{keylog}"]
-    command += ["-Y", display, "-T", "fields", "-E", "separator=|",
-                "-E", "occurrence=a", "-E", "aggregator=,"]
-    for field in fields:
-        command += ["-e", field]
-    output = subprocess.check_output(command, text=True, stderr=subprocess.DEVNULL)
+    with tempfile.TemporaryDirectory(prefix="tlkh13-fields-") as directory:
+        readable_pcap = Path(directory) / "traffic.pcap"
+        shutil.copyfile(pcap, readable_pcap)
+        command = ["tshark", "-r", str(readable_pcap)]
+        if keylog is not None:
+            command += ["-o", f"tls.keylog_file:{keylog}"]
+        command += ["-Y", display, "-T", "fields", "-E", "separator=|",
+                    "-E", "occurrence=a", "-E", "aggregator=,"]
+        for field in fields:
+            command += ["-e", field]
+        output = subprocess.check_output(command, text=True, stderr=subprocess.DEVNULL)
     return [line.split("|") for line in output.splitlines() if line]
 
 
@@ -94,9 +99,12 @@ def parse_follow_output(output):
 
 
 def follow_stream(pcap, stream):
-    output = subprocess.check_output(
-        ["tshark", "-r", str(pcap), "-q", "-z", f"follow,tcp,raw,{stream}"],
-        text=True, stderr=subprocess.DEVNULL)
+    with tempfile.TemporaryDirectory(prefix="tlkh13-follow-") as directory:
+        readable_pcap = Path(directory) / "traffic.pcap"
+        shutil.copyfile(pcap, readable_pcap)
+        output = subprocess.check_output(
+            ["tshark", "-r", str(readable_pcap), "-q", "-z", f"follow,tcp,raw,{stream}"],
+            text=True, stderr=subprocess.DEVNULL)
     return parse_follow_output(output)
 
 
@@ -177,4 +185,18 @@ def authenticate_marker(records, secret, suite, marker):
                 matches.append({"record_index": record_index, "sequence": sequence,
                                 "inner_type": result["inner_type"],
                                 "plaintext_sha256": hashlib.sha256(result["content"]).hexdigest()})
+    return matches
+
+
+def authenticate_keyupdate(records, secret, suite, request_update):
+    """Authenticate a KeyUpdate handshake message under the old directional key."""
+    key, iv = traffic_key_iv(secret, suite)
+    expected = bytes([24, 0, 0, 1, request_update])
+    matches = []
+    sequence_limit = len(records) + 8
+    for record_index, record in enumerate(records):
+        for sequence in range(sequence_limit):
+            result = decrypt_record(record, key, iv, sequence)
+            if result and result["inner_type"] == 22 and expected in result["content"]:
+                matches.append({"record_index": record_index, "sequence": sequence})
     return matches

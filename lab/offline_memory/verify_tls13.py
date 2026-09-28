@@ -7,7 +7,7 @@ from pathlib import Path
 
 from core_memory import CoreMemory
 from rank_core import digest
-from tls13_packets import authenticate_marker, directional_records, tshark_fields
+from tls13_packets import authenticate_keyupdate, authenticate_marker, directional_records
 
 
 def read_references(path):
@@ -24,17 +24,16 @@ def read_references(path):
     return references
 
 
-def keyupdate_packet_evidence(pcap, reference, target):
-    rows = tshark_fields(
-        pcap, "tls.handshake.type == 24",
-        ["tcp.stream", "tcp.srcport", "tcp.dstport", "tls.handshake.key_update.request_update"],
-        keylog=reference)
-    relevant = [row for row in rows if row and row[0] == str(target["stream"])]
-    server_requested = any(len(row) == 4 and int(row[1]) == target["server_port"] and row[3] == "1"
-                           for row in relevant)
-    client_responded = any(len(row) == 4 and int(row[2]) == target["server_port"] and row[3] == "0"
-                           for row in relevant)
-    return {"events": len(relevant), "server_requested_peer_update": server_requested,
+def keyupdate_packet_evidence(targets, streams, references):
+    client = next(target for target in targets if target["label"] == "CLIENT_TRAFFIC_SECRET_0")
+    server = next(target for target in targets if target["label"] == "SERVER_TRAFFIC_SECRET_0")
+    client_secret = references[(client["label"], client["client_random"])]
+    server_secret = references[(server["label"], server["client_random"])]
+    server_requested = bool(authenticate_keyupdate(
+        streams[server["stream"]]["server"], server_secret, server["cipher_suite"], 1))
+    client_responded = bool(authenticate_keyupdate(
+        streams[client["stream"]]["client"], client_secret, client["cipher_suite"], 0))
+    return {"server_requested_peer_update": server_requested,
             "client_sent_update_response": client_responded,
             "packet_condition_ok": server_requested and client_responded}
 
@@ -118,8 +117,7 @@ def main():
 
     packet_condition = {"packet_condition_ok": True}
     if seal["scenario"] == "keyupdate":
-        packet_condition = keyupdate_packet_evidence(
-            args.case / "traffic.pcap", args.reference, seal["targets"][0])
+        packet_condition = keyupdate_packet_evidence(seal["targets"], streams, references)
     exact_ok = all(value["exact_match"] for value in comparisons.values())
     markers_ok = all(reference_markers.values()) and all(selected_markers.values())
     controls_ok = (all(value["target_marker_rejected"] for value in one_bit_controls.values()) and

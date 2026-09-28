@@ -42,3 +42,11 @@ RFC 8446 sections 4.2.11, 4.6.3, and 7.2 define negotiated PSK resumption and di
 - The campaign runner now records `setup`, `condition`, `extraction`, and `verification` failures separately; requires 600-second spacing and a 20-GiB reserve; and snapshots every added helper.
 - Test suite: 15 tests pass with the bundled cryptographic runtime. The system Python run passes 14 tests and explicitly skips the synthetic AES-GCM test because that local interpreter lacks `cryptography`; the controlled lab Python has `cryptography` 46.0.5.
 - No pilot has been launched at this checkpoint. New-scenario observed counts remain zero.
+
+## Retained-traffic compatibility finding
+
+- The manually deployed file hashes matched commit `2f91356` exactly.
+- A read-only check against retained case `TLS13-REPEAT-20260928-A-020` found that lab TShark 4.6.4 refuses the intentionally mode-`0400` PCAP path. This is an access/tool compatibility failure, not an extraction result.
+- The prior validated code avoided the same behavior by copying the PCAP into an ephemeral temporary directory. The new parser now does likewise for field extraction and TCP reassembly; the copy stays on the controlled host and is automatically removed.
+- KeyUpdate packet evidence no longer asks TShark to open a root-only key log. It directly authenticates the server `update_requested` message and client response under the independent generation-zero references after selection is sealed.
+- Test suite after repair: 16/16 with the bundled cryptographic runtime; the system interpreter passes the 14 non-cryptographic tests and skips the two AES-GCM checks.

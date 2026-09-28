@@ -10,7 +10,8 @@ from rank_tls13 import rank
 from test_offline_memory import make_core
 from validate_tls13 import LABELS
 from check_tls13_scenario import evaluate
-from tls13_packets import SUITES, authenticate_marker, parse_follow_output, traffic_key_iv
+from tls13_packets import (SUITES, authenticate_keyupdate, authenticate_marker,
+                           parse_follow_output, traffic_key_iv)
 
 class TLS13Tests(unittest.TestCase):
     def test_directional_labels_and_suite_hash_lengths(self):
@@ -39,6 +40,15 @@ class TLS13Tests(unittest.TestCase):
         self.assertEqual(len(authenticate_marker([record],secret,'0x1302',marker)),1)
         changed=bytearray(secret);changed[0]^=1
         self.assertEqual(authenticate_marker([record],bytes(changed),'0x1302',marker),[])
+
+    @unittest.skipIf(AESGCM is None, 'cryptography is required for direct TLS record authentication')
+    def test_direct_keyupdate_packet_evidence(self):
+        secret=bytes(range(48));key,iv=traffic_key_iv(secret,'0x1302')
+        plaintext=bytes([24,0,0,1,1,22])
+        header=bytes([23,3,3])+(len(plaintext)+16).to_bytes(2,'big')
+        record=header+AESGCM(key).encrypt(iv,plaintext,header)
+        self.assertTrue(authenticate_keyupdate([record],secret,'0x1302',1))
+        self.assertFalse(authenticate_keyupdate([record],secret,'0x1302',0))
 
     def test_parse_follow_output_preserves_directions(self):
         output='''Node 0: 127.0.0.1:50123

@@ -171,8 +171,8 @@ def main():
         stages = [
             ('capture', capture, 240),
             ('reference_isolation', ['runuser','-u','researcher','--','test','!','-r', str(reference / 'server-reference.keys')], 10),
-            ('condition', [sys.executable, str(snapshot / 'check_tls13_scenario.py'), '--case', str(case),
-                           '--output', str(case / 'scenario-condition.json')], 60),
+            ('condition', researcher + [str(snapshot / 'check_tls13_scenario.py'), '--case', str(case),
+                                        '--output', str(case / 'scenario-condition.json')], 60),
             ('rank', researcher + [str(snapshot / 'rank_tls13.py'), '--core', str(case / 'firefox.core'), '--output', str(case / 'offline-tls13')], 180),
             ('packet_validation', researcher + [str(snapshot / 'validate_tls13.py'), '--case', str(case),
                 '--offline', str(case / 'offline-tls13'), '--output', str(case / 'offline-tls13-pcap')], 300),
