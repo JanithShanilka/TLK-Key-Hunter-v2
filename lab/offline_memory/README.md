@@ -106,3 +106,5 @@ Tests: `python3 tests/test_offline_campaign.py` checks failure accounting, stora
 The first campaign attempt A-001 stopped because the frozen script directory lacked researcher traversal permission. Its original failure is preserved; subsequent analysis of the same dump succeeded and is recorded separately. Continuation B schedules the remaining 19 sessions, so there are 20 captures total across A and B. The runner now sets the snapshot directory mode explicitly after creation. See the versioned work log for provenance and retention outcomes.
 
 The bounded campaign is complete. See [repeatability results](../../docs/offline-memory/REPEATABILITY_RESULTS.md) for all 20 attempts, the separate repair outcome, memory-ranking limitations and retained non-secret records.
+
+The permanent finding is recorded in [Live-session secrets and offline recovery](../../docs/offline-memory/LIVE_SESSION_SECRETS_AND_OFFLINE_RECOVERY.md), including a redacted visual report. The [TLS 1.3 pilot plan](../../docs/offline-memory/TLS13_OFFLINE_PILOT_PLAN.md) is proposed work, not a completed recovery claim.

@@ -152,3 +152,9 @@ Installation will not include a general system upgrade or reboot. Verify the res
 - Memory-only unique selection remained 0/19 in B due to ties. Candidate sizes were five in 15 sessions and four in four sessions: 91 candidate checks, 19 packet passes, 72 failed checks. All 19 one-bit negative controls failed to decrypt both markers.
 - All 19 B result rows and A's repair record confirm raw-core/profile deletion. Final allocated pilot-case bytes: 989,298,688. Only approved non-secret manifests, summaries, runs JSON/CSV and the separate repair summary were downloaded.
 - Capture/extractor/verifier hashes match between A and B; only the orchestration runner changed. Completion analysis is in REPEATABILITY_RESULTS.md. Follow-up automation `check-tls-repeatability-campaign` was paused after completion; no further runs were started.
+
+### Permanent live-session report and TLS 1.3 next-step plan
+
+- User emphasized preserving Live-session secrets and offline recovery. Saved a versioned finding document with all 20 session outcomes and a redacted HTML archival copy of the private report. All 136 displayed 48-byte secret values (references, winners and candidates) were redacted from the Git copy. The full-key report remains outside Git.
+- Preserved exact wording: every tested TLS 1.2 session was eventually recovered; 19 completed automatically and one required permissions repair and same-dump reanalysis. Memory-only ambiguity remains explicit.
+- Saved a separate RFC-grounded TLS 1.3 pilot plan covering directional traffic secrets, hash-dependent lengths, independent references, packet validation, failure diagnostics and bounded retention. No TLS 1.3 capture was started in this documentation step.
