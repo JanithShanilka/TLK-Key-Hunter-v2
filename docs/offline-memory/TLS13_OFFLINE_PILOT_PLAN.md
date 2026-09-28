@@ -1,4 +1,4 @@
-# TLS 1.3 saved-memory pilot — proposed, not yet executed
+# TLS 1.3 saved-memory pilot — feasibility demonstrated; campaign pending
 
 ## Objective
 
@@ -30,4 +30,6 @@ If extraction fails, first distinguish a wrong capture process/timing, missing c
 
 ## Current status
 
-Plan saved; no TLS 1.3 offline capture or recovery is claimed by this document. Stronger protocol design does not decide whether usable traffic secrets can be recovered from this particular endpoint memory snapshot. That must be measured.
+The first development case and one fresh validation case completed under the planned isolation boundary. Both negotiated `TLS_AES_256_GCM_SHA384`, so each directional application traffic secret was 48 bytes (384 bits). Reference-blind extraction produced nine candidates in development and ten in validation. Saved-traffic validation uniquely assigned one client and one server application traffic secret in each case. Independent post-seal verification found exact matches with zero differing bits, decrypted both controlled markers, and confirmed the expected directional failure with one-bit controls.
+
+This demonstrates feasibility in two cases and freezes the method for a bounded 20-session repeatability campaign. It does not establish the campaign outcome, memory-only role selection, recovery of handshake secrets, SHA-256-suite behavior, TLS 1.3 sessions with resumption/0-RTT/KeyUpdate, or general recovery beyond the tested environment.

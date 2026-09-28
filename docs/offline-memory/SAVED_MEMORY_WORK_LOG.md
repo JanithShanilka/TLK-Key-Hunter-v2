@@ -158,3 +158,11 @@ Installation will not include a general system upgrade or reboot. Verify the res
 - User emphasized preserving Live-session secrets and offline recovery. Saved a versioned finding document with all 20 session outcomes and a redacted HTML archival copy of the private report. All 136 displayed 48-byte secret values (references, winners and candidates) were redacted from the Git copy. The full-key report remains outside Git.
 - Preserved exact wording: every tested TLS 1.2 session was eventually recovered; 19 completed automatically and one required permissions repair and same-dump reanalysis. Memory-only ambiguity remains explicit.
 - Saved a separate RFC-grounded TLS 1.3 pilot plan covering directional traffic secrets, hash-dependent lengths, independent references, packet validation, failure diagnostics and bounded retention. No TLS 1.3 capture was started in this documentation step.
+
+### TLS 1.3 development and fresh validation
+
+- Added a separate TLS 1.3 capture mode, structured 32/48-byte candidate discovery, directional saved-PCAP validation, independent verifier and bounded campaign runner. TLS 1.2 defaults and records remain unchanged.
+- Development case `FIREFOX-TLS13-CORE-DEV-001` negotiated `TLS_AES_256_GCM_SHA384` and produced nine candidates. Without reference access, packet validation selected exactly one client and one server application traffic secret and decrypted both markers. Post-seal verification confirmed both exact matches with zero differing bits out of 384.
+- Froze the capture, reader, ranker, validator and verifier hashes before `FIREFOX-TLS13-CORE-VALIDATION-001`. The fresh case negotiated the same suite and produced ten candidates. It independently produced one client winner and one server winner; both matched exactly and decrypted request and response.
+- Directional one-bit controls behaved as expected in both cases: corrupting the client secret prevented request recovery only, while corrupting the server secret prevented response recovery only. References remained root-only until selection was sealed.
+- Memory-only candidate discovery does not assign traffic-secret roles. Packet validation remains part of the complete recovery method. The two successful cases justify a bounded 20-session campaign; they are not themselves a repeatability rate.

@@ -108,3 +108,11 @@ The first campaign attempt A-001 stopped because the frozen script directory lac
 The bounded campaign is complete. See [repeatability results](../../docs/offline-memory/REPEATABILITY_RESULTS.md) for all 20 attempts, the separate repair outcome, memory-ranking limitations and retained non-secret records.
 
 The permanent finding is recorded in [Live-session secrets and offline recovery](../../docs/offline-memory/LIVE_SESSION_SECRETS_AND_OFFLINE_RECOVERY.md), including a redacted visual report. The [TLS 1.3 pilot plan](../../docs/offline-memory/TLS13_OFFLINE_PILOT_PLAN.md) is proposed work, not a completed recovery claim.
+
+## TLS 1.3 implementation
+
+`capture_firefox.py --tls-version 1.3` constrains both endpoints to TLS 1.3 and disables resumption tickets and browser 0-RTT for the first scope. `rank_tls13.py` enumerates structured 32- and 48-byte CKA_VALUE candidates without reference or packet input. `validate_tls13.py` uses the negotiated cipher suite to select the correct hash length and validates client and server application traffic-secret roles independently against the saved PCAP. `verify_tls13.py` opens the isolated reference only after selection is sealed, checks each directional secret exactly, and applies one-bit controls separately to request and response decryption.
+
+The first development case and a subsequent fresh validation case both negotiated `TLS_AES_256_GCM_SHA384`. Development returned nine candidates; validation returned ten. In each case, packet validation found exactly one client and one server application traffic secret. Both directional secrets matched their independent references with zero differing bits out of 384, and together decrypted both controlled HTTP markers. Corrupting the client secret broke request recovery while leaving the response; corrupting the server secret produced the reverse outcome.
+
+These two cases establish feasibility for the fixed campaign method in this lab, while memory-only role assignment remains unresolved. `run_campaign_tls13.py` freezes the TLS 1.3 scripts, runs fresh sessions sequentially, records all failures, and deletes each completed case's raw core/profile only after durable verification results are saved. Its records must remain separate from the TLS 1.2 campaign.

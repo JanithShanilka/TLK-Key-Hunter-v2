@@ -1,0 +1,52 @@
+{
+  "case_id": "FIREFOX-TLS13-CORE-DEV-001",
+  "protocol": "TLS1.3",
+  "cipher": "TLS_AES_256_GCM_SHA384",
+  "candidate_count": 9,
+  "memory_only_selection": "unassigned_candidates",
+  "reference_comparison_after_seal": true,
+  "selection_uses_pcap": true,
+  "reference_used_for_selection": false,
+  "presence_audit_uses_reference": true,
+  "core_sha256": "b8cbbac16a202539dec0d24a1cc5c400d831d3ae883b3894ec96436239907733",
+  "pcap_sha256": "a17e0a62642d71374344110af70e0842ea509b62098c82f4a1330e8db5cc2ed5",
+  "directional_comparisons": {
+    "SERVER_TRAFFIC_SECRET_0": {
+      "bits": 384,
+      "literal_occurrences": 1,
+      "reference_in_candidate_set": true,
+      "exact_match": true,
+      "hamming_distance_bits": 0
+    },
+    "CLIENT_TRAFFIC_SECRET_0": {
+      "bits": 384,
+      "literal_occurrences": 1,
+      "reference_in_candidate_set": true,
+      "exact_match": true,
+      "hamming_distance_bits": 0
+    }
+  },
+  "reference_sanity": {
+    "exit": 0,
+    "request": true,
+    "response": true
+  },
+  "selected_decryption": {
+    "exit": 0,
+    "request": true,
+    "response": true
+  },
+  "one_bit_controls": {
+    "CLIENT_TRAFFIC_SECRET_0": {
+      "exit": 0,
+      "request": false,
+      "response": true
+    },
+    "SERVER_TRAFFIC_SECRET_0": {
+      "exit": 0,
+      "request": true,
+      "response": false
+    }
+  },
+  "complete_offline_recovery": true
+}

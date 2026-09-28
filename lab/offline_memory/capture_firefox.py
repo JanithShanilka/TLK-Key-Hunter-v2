@@ -77,8 +77,11 @@ def serve(args):
     private = args.reference
     case = args.case
     context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-    context.minimum_version = context.maximum_version = ssl.TLSVersion.TLSv1_2
-    context.set_ciphers("ECDHE-RSA-AES128-GCM-SHA256")
+    context.minimum_version = context.maximum_version = (ssl.TLSVersion.TLSv1_3 if args.tls_version == "1.3" else ssl.TLSVersion.TLSv1_2)
+    if args.tls_version == "1.2":
+        context.set_ciphers("ECDHE-RSA-AES128-GCM-SHA256")
+    else:
+        context.num_tickets = 0
     context.load_cert_chain(private / "server.cert.pem", private / "server.key.pem")
     context.keylog_filename = str(private / "server-reference.keys")
     with socket.socket() as listener:
@@ -97,13 +100,14 @@ def serve(args):
                     raise RuntimeError("Connection ended before the request")
                 request += chunk
             path = request.split(b"\r\n", 1)[0].decode().split(" ")[1]
-            marker = f"TLSKH-OFFLINE|{case.name}|TLS1.2|CONTROLLED-RESPONSE"
+            marker = f"TLSKH-OFFLINE|{case.name}|TLS{args.tls_version}|CONTROLLED-RESPONSE"
             body = marker.encode()
             connection.sendall(b"HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\n\r\n" + f"{len(body):x}\r\n".encode() + body + b"\r\n")
             write_json(case / "server-event.json", {
                 "time": utc(), "protocol": connection.version(), "cipher": connection.cipher()[0],
                 "request_path": path, "response_marker": marker,
                 "peer_address": address[0], "peer_port": address[1],
+                "session_reused": connection.session_reused,
                 "capture_condition": "after first response chunk; connection held open",
             })
             wait_for(lambda: (case / "release-server").exists(), 180)
@@ -133,6 +137,7 @@ def main(args):
     bidi = None
     record = {"case_id": case.name, "started": utc(), "status": "started",
               "kind": "development_capture", "target_key_logging": False,
+              "requested_tls_version": args.tls_version,
               "frida_loaded": False, "key_export_api_called": False,
               "socket_sandbox_exception": args.lab_disable_socket_sandbox,
               "accept_insecure_certs": args.lab_accept_insecure_certs,
@@ -171,7 +176,9 @@ def main(args):
         shutil.copyfile(private / "server.cert.pem", leaf)
         os.chown(leaf, account.pw_uid, account.pw_gid)
         run(["runuser", "-u", "researcher", "--", "certutil", "-A", "-n", "Offline localhost leaf", "-t", "P,,", "-i", str(leaf), "-d", f"sql:{profile}"], "leaf-trust.log")
-        prefs = {"security.tls.version.min": 3, "security.tls.version.max": 3,
+        prefs = {"security.tls.version.min": 4 if args.tls_version == "1.3" else 3,
+                 "security.tls.version.max": 4 if args.tls_version == "1.3" else 3,
+                 "security.tls.enable_0rtt_data": False,
                  "network.http.http3.enable": False, "network.http.speculative-parallel-limit": 0,
                  "network.http.max-persistent-connections-per-server": 1,
                  "network.captive-portal-service.enabled": False, "network.connectivity-service.enabled": False,
@@ -187,7 +194,7 @@ def main(args):
         os.chown(runtime, account.pw_uid, account.pw_gid)
         launch(["tcpdump", "-i", "lo", "-s", "0", "-U", "-w", str(case / "traffic.pcap"), "tcp", "port", str(args.port)], "tcpdump.log")
         wait_for(lambda: "listening on" in (case / "tcpdump.log").read_text(), 10)
-        server = launch([sys.executable, str(Path(__file__).resolve()), "--server", "--case", str(case), "--reference", str(private), "--port", str(args.port)], "server.log")
+        server = launch([sys.executable, str(Path(__file__).resolve()), "--server", "--case", str(case), "--reference", str(private), "--port", str(args.port), "--tls-version", args.tls_version], "server.log")
         wait_for(lambda: (case / "server.ready").exists(), 10)
         browser_environment = ["HOME=/home/researcher", f"XDG_RUNTIME_DIR={runtime}"]
         if args.lab_disable_socket_sandbox:
@@ -300,6 +307,7 @@ if __name__ == "__main__":
     parser.add_argument("--reference", type=Path, required=True)
     parser.add_argument("--port", type=int, default=18443)
     parser.add_argument("--firefox", type=Path, default=Path("/opt/tlskeyhunter/firefox-136.0.2-pristine/firefox"))
+    parser.add_argument("--tls-version", choices=("1.2", "1.3"), default="1.2")
     parser.add_argument("--server", action="store_true")
     parser.add_argument("--lab-disable-socket-sandbox", action="store_true", help="Explicitly authorized disposable-profile compatibility exception")
     parser.add_argument("--lab-accept-insecure-certs", action="store_true", help="Explicitly authorized localhost automation-session certificate exception")
