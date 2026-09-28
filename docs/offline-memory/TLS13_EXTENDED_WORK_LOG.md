@@ -31,3 +31,14 @@ RFC 8446 sections 4.2.11, 4.6.3, and 7.2 define negotiated PSK resumption and di
 - Pending: extend packet validation and independent verification for per-flow markers, resumption packet evidence, generation-specific KeyUpdate evidence and one-bit controls; add meaningful tests; run each pilot under storage guards; launch only successful scenario campaigns; collect reviewed nonsecret results; push review branch/PR.
 - The X-Ray-TLS paper was text-inspected for snapshot context; it does not supply results for these timing arms.
 - User requested Daybreak. The current running model cannot be changed by the exposed tools; Codex UI control was explicitly blocked. Work is checkpointed for continuation after the user changes the chat model. No heartbeat created because no campaign has started.
+
+## 2026-09-28 — scenario verifier implementation
+
+- Added reference-free scenario checks that bind server events to observed TCP streams by client port and require separate TLS 1.3 ClientHello randoms.
+- Timing checks use monotonic event bounds: the before-response capture must start after the request and finish before the response; delayed capture must start at least 30 seconds after the response.
+- Resumption requires server `session_reused=false` then `true`, plus pre-shared-key extension 41 in the second ClientHello and ServerHello. Concurrency requires two distinct ports/randoms whose lifetimes overlap.
+- Candidate assignment now reassembles each TCP direction, derives the traffic key and IV from each saved-memory candidate, and directly authenticates the exact controlled marker in a TLS 1.3 record. This supports flow-specific and generation-specific assignment without opening the reference or deriving generation one from a selected generation-zero secret.
+- Independent verification checks every target against the root-only reference, authenticates every request/response marker, flips one bit in every reference secret, and applies cross-flow or cross-generation secrets as relevant. KeyUpdate additionally requires decrypted packet evidence of a server `update_requested` message and the client update response.
+- The campaign runner now records `setup`, `condition`, `extraction`, and `verification` failures separately; requires 600-second spacing and a 20-GiB reserve; and snapshots every added helper.
+- Test suite: 15 tests pass with the bundled cryptographic runtime. The system Python run passes 14 tests and explicitly skips the synthetic AES-GCM test because that local interpreter lacks `cryptography`; the controlled lab Python has `cryptography` 46.0.5.
+- No pilot has been launched at this checkpoint. New-scenario observed counts remain zero.

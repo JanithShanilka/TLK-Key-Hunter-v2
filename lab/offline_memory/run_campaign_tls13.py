@@ -14,7 +14,8 @@ import time
 from datetime import datetime, timezone
 
 GIB = 1024 ** 3
-SCRIPTS = ('capture_firefox.py', 'core_memory.py', 'rank_core.py', 'rank_tls13.py',
+SCRIPTS = ('capture_firefox.py', 'extended_server.py', 'core_memory.py', 'rank_core.py',
+           'rank_tls13.py', 'tls13_packets.py', 'check_tls13_scenario.py',
            'validate_tls13.py', 'verify_tls13.py')
 
 
@@ -75,6 +76,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--campaign-id', required=True)
+    parser.add_argument('--scenario', required=True,
+                        choices=('before-response', 'delayed', 'resumption', 'keyupdate', 'concurrency'))
     parser.add_argument('--count', type=int, default=10)
     parser.add_argument('--interval-seconds', type=int, default=300, help='Minimum start-to-start spacing; never overlaps')
     parser.add_argument('--start-delay-seconds', type=int, default=0)
@@ -86,8 +89,8 @@ def main():
     args = parser.parse_args()
     if os.geteuid() != 0:
         parser.error('Run only as root on the authorized controlled lab host')
-    if not 1 <= args.count <= 100 or args.interval_seconds < 60 or args.budget_gib <= 0 or args.minimum_free_gib < 12:
-        parser.error('Require 1–100 cases, spacing >=60 seconds, positive budget, and >=12 GiB free reserve')
+    if not 1 <= args.count <= 100 or args.interval_seconds < 600 or args.budget_gib <= 0 or args.minimum_free_gib < 20:
+        parser.error('Require 1–100 cases, spacing >=600 seconds, positive budget, and >=20 GiB free reserve')
     if not args.campaign_id or any(c not in 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_' for c in args.campaign_id):
         parser.error('Campaign ID must contain only letters, numbers, hyphens or underscores')
     os.umask(0o077)
@@ -116,7 +119,8 @@ def main():
     settings = {key: str(value) if isinstance(value, Path) else value for key, value in vars(args).items()}
     save(batch / 'manifest.json', {'started': utc(), 'settings': settings, 'script_sha256': hashes,
         'retention': 'After verification and durable result save, delete raw core, disposable profile and runtime. Keep compact evidence. Interrupted/setup failures stop for inspection.', 'protocol': 'TLS1.3',
-        'design': 'Fresh full TLS 1.3 connection per attempt; fixed CKA_VALUE 32/48-byte candidate method, directional PCAP validation, then independent reference verification.'})
+        'scenario': args.scenario,
+        'design': 'Scenario condition check, reference-blind fixed CKA_VALUE candidate enumeration, direct per-flow/per-generation TLS-record authentication, then independent reference equality, marker, and wrong-secret verification.'})
     rows = []
     state = {'state': 'running', 'started': utc(), 'campaign_id': args.campaign_id, 'planned': args.count}
     budget = int(args.budget_gib * GIB)
@@ -126,9 +130,11 @@ def main():
     def publish():
         save(batch / 'summary.json', {**state, **aggregate(rows), 'updated': utc(), 'allocated_case_bytes': allocated(cases)})
         save(batch / 'runs.json', rows)
-        columns = ['case_id','started','ended','status','failed_stage','candidate_count','cipher',
-                   'client_packet_pass_count','server_packet_pass_count','client_exact_match','server_exact_match',
-                   'complete_offline_recovery','elapsed_seconds','dump_apparent_bytes','dump_allocated_bytes']
+        columns = ['case_id','scenario','started','ended','status','failure_class','failed_stage',
+                   'condition_ok','candidate_count','target_count','all_target_pass_counts_one',
+                   'assignment_unique','exact_match_all_targets','controlled_markers_all_targets',
+                   'wrong_secret_controls_all_pass','complete_offline_recovery','elapsed_seconds',
+                   'dump_apparent_bytes','dump_allocated_bytes']
         temp = batch / 'runs.csv.tmp'
         with temp.open('w', newline='') as stream:
             writer = csv.DictWriter(stream, fieldnames=columns, extrasaction='ignore')
@@ -151,12 +157,13 @@ def main():
         case_id = args.campaign_id + '-' + str(number).zfill(3)
         case = cases / case_id
         reference = Path('/root/tlkh-memory-reference') / case_id
-        row = {'case_id': case_id, 'started': utc(), 'status': 'running', 'complete_offline_recovery': False}
+        row = {'case_id': case_id, 'scenario': args.scenario, 'started': utc(),
+               'status': 'running', 'complete_offline_recovery': False}
         rows.append(row)
         state['current_case'] = case_id
         publish()
         capture = [args.capture_python, str(snapshot / 'capture_firefox.py'), '--case', str(case),
-                   '--reference', str(reference), '--tls-version', '1.3']
+                   '--reference', str(reference), '--tls-version', '1.3', '--scenario', args.scenario]
         for flag in ('lab_disable_socket_sandbox', 'lab_accept_insecure_certs'):
             if getattr(args, flag):
                 capture.append('--' + flag.replace('_', '-'))
@@ -164,28 +171,39 @@ def main():
         stages = [
             ('capture', capture, 240),
             ('reference_isolation', ['runuser','-u','researcher','--','test','!','-r', str(reference / 'server-reference.keys')], 10),
+            ('condition', [sys.executable, str(snapshot / 'check_tls13_scenario.py'), '--case', str(case),
+                           '--output', str(case / 'scenario-condition.json')], 60),
             ('rank', researcher + [str(snapshot / 'rank_tls13.py'), '--core', str(case / 'firefox.core'), '--output', str(case / 'offline-tls13')], 180),
-            ('packet_validation', researcher + [str(snapshot / 'validate_tls13.py'), '--offline', str(case / 'offline-tls13'), '--pcap', str(case / 'traffic.pcap'), '--output', str(case / 'offline-tls13-pcap')], 180),
+            ('packet_validation', researcher + [str(snapshot / 'validate_tls13.py'), '--case', str(case),
+                '--offline', str(case / 'offline-tls13'), '--output', str(case / 'offline-tls13-pcap')], 300),
             ('verify', [sys.executable, str(snapshot / 'verify_tls13.py'), '--case', str(case), '--reference', str(reference / 'server-reference.keys')], 180)]
         for name, command, timeout in stages:
             try:
                 run_stage(command, batch / (case_id + '-' + name + '.log'), timeout,
                           lambda: allocated(cases) <= budget and shutil.disk_usage(workspace).free >= reserve)
-                if name == 'rank':
+                if name == 'condition':
+                    condition = json.loads((case / 'scenario-condition.json').read_text())
+                    row['condition_ok'] = condition['condition_ok']
+                    row['target_count'] = len(condition['targets'])
+                elif name == 'rank':
                     memory = json.loads((case / 'offline-tls13/selection-seal.json').read_text())
                     row['candidate_count'] = memory['candidate_count']
                 elif name == 'packet_validation':
                     sealed = json.loads((case / 'offline-tls13-pcap/selection-seal.json').read_text())
-                    row['client_packet_pass_count'] = sealed['directional_pass_counts']['CLIENT_TRAFFIC_SECRET_0']
-                    row['server_packet_pass_count'] = sealed['directional_pass_counts']['SERVER_TRAFFIC_SECRET_0']
+                    row['all_target_pass_counts_one'] = all(value == 1 for value in sealed['target_pass_counts'].values())
+                    row['assignment_unique'] = sealed['assignment_unique']
                 elif name == 'verify':
                     result = json.loads((case / 'verification-tls13/summary.json').read_text())
-                    row.update(result)
-                    row['client_exact_match'] = result['directional_comparisons']['CLIENT_TRAFFIC_SECRET_0']['exact_match']
-                    row['server_exact_match'] = result['directional_comparisons']['SERVER_TRAFFIC_SECRET_0']['exact_match']
+                    for field in ('exact_match_all_targets', 'controlled_markers_all_targets',
+                                  'wrong_secret_controls_all_pass', 'complete_offline_recovery'):
+                        row[field] = result[field]
                     row['status'] = 'success' if result['complete_offline_recovery'] else 'recovery_failed'
             except Exception as error:
-                row.update({'status': 'failed', 'failed_stage': name, 'error': str(error)})
+                failure_class = ('setup' if name in ('capture', 'reference_isolation') else
+                                 'condition' if name == 'condition' else
+                                 'extraction' if name in ('rank', 'packet_validation') else 'verification')
+                row.update({'status': 'failed', 'failure_class': failure_class,
+                            'failed_stage': name, 'error': str(error)})
                 break
         dump = case / 'firefox.core'
         if dump.exists():

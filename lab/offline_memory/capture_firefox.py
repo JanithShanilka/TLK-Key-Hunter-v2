@@ -228,7 +228,13 @@ def main(args):
             context = tree["contexts"][0]["context"]
             command(3, "browsingContext.navigate", {"context": context, "url": navigation_url, "wait": "none"})
         if args.scenario in ("resumption", "concurrency", "keyupdate"):
-            wait_for(lambda: (case / "first-complete").exists() or (server.poll() is not None and (_ for _ in ()).throw(RuntimeError("Scenario server exited"))), 60)
+            def first_phase_complete():
+                if (case / "first-complete").exists():
+                    return True
+                if server.poll() is not None:
+                    raise RuntimeError("Scenario server exited during its first phase")
+                return False
+            wait_for(first_phase_complete, 60)
             if args.scenario == "concurrency":
                 context = command(4, "browsingContext.create", {"type": "tab"})["context"]
             command(5, "browsingContext.navigate", {"context": context, "url": navigation_url + "/second", "wait": "none"})
@@ -277,6 +283,11 @@ def main(args):
         server.wait(timeout=10)
         if server.returncode: raise RuntimeError("Scenario server failed")
         write_json(case / "acquisition-seal.json", record)
+        for evidence_name in ("acquisition-seal.json", "scenario-events.json"):
+            evidence = case / evidence_name
+            if evidence.exists():
+                os.chown(evidence, account.pw_uid, account.pw_gid)
+                evidence.chmod(0o444)
         print(json.dumps({k: record[k] for k in ("case_id", "status", "dump_bytes", "dump_sha256")}))
     except Exception as error:
         record.update({"status": "failed", "error": str(error)})

@@ -1,68 +1,149 @@
 #!/usr/bin/env python3
-"""Post-seal independent TLS 1.3 reference comparison and two-direction controls."""
-import argparse,hashlib,json,os,shutil,subprocess,tempfile
+"""Post-selection TLS 1.3 reference comparison and independent controls."""
+import argparse
+import json
+import os
 from pathlib import Path
+
 from core_memory import CoreMemory
 from rank_core import digest
-from validate_tls13 import LABELS
+from tls13_packets import authenticate_marker, directional_records, tshark_fields
+
+
+def read_references(path):
+    references = {}
+    for line in path.read_text().splitlines():
+        parts = line.split()
+        if len(parts) != 3 or "TRAFFIC_SECRET_" not in parts[0]:
+            continue
+        key = (parts[0], parts[1].lower())
+        value = bytes.fromhex(parts[2])
+        if key in references and references[key] != value:
+            raise RuntimeError("Conflicting duplicate reference entry")
+        references[key] = value
+    return references
+
+
+def keyupdate_packet_evidence(pcap, reference, target):
+    rows = tshark_fields(
+        pcap, "tls.handshake.type == 24",
+        ["tcp.stream", "tcp.srcport", "tcp.dstport", "tls.handshake.key_update.request_update"],
+        keylog=reference)
+    relevant = [row for row in rows if row and row[0] == str(target["stream"])]
+    server_requested = any(len(row) == 4 and int(row[1]) == target["server_port"] and row[3] == "1"
+                           for row in relevant)
+    client_responded = any(len(row) == 4 and int(row[2]) == target["server_port"] and row[3] == "0"
+                           for row in relevant)
+    return {"events": len(relevant), "server_requested_peer_update": server_requested,
+            "client_sent_update_response": client_responded,
+            "packet_condition_ok": server_requested and client_responded}
 
 
 def main():
-    p=argparse.ArgumentParser()
-    p.add_argument('--case',type=Path,required=True);p.add_argument('--reference',type=Path,required=True)
-    a=p.parse_args();os.umask(0o077)
-    offline=a.case/'offline-tls13-pcap'
-    seal=json.loads((offline/'selection-seal.json').read_text())
-    raw=offline/'ranked-candidates.private.json'
-    if digest(raw)!=seal['candidate_file_sha256'] or digest(a.case/'firefox.core')!=seal['core_sha256'] or digest(a.case/'traffic.pcap')!=seal['pcap_sha256']:raise RuntimeError('Evidence hash mismatch')
-    refs={}
-    for line in a.reference.read_text().splitlines():
-        parts=line.split()
-        if parts and parts[0] in LABELS:
-            if len(parts)!=3 or parts[1]!=seal['client_random'] or parts[0] in refs:raise RuntimeError('Reference connection/role mismatch')
-            value=bytes.fromhex(parts[2])
-            if len(value)!=seal['secret_bytes']:raise RuntimeError('Reference length mismatch')
-            refs[parts[0]]=value
-    if set(refs)!=set(LABELS):raise RuntimeError('Missing directional reference')
-    event=json.loads((a.case/'server-event.json').read_text())
-    if event['protocol']!='TLSv1.3' or event['session_reused']:raise RuntimeError('Expected full TLS 1.3 session')
-    rows=json.loads(raw.read_text());byid={r['id']:r for r in rows}
-    output=a.case/'verification-tls13';output.mkdir(exist_ok=False)
-    comparisons={}
-    with CoreMemory(a.case/'firefox.core') as core:
-        for role,reference in refs.items():
-            selected=byid.get(seal['selected_ids'][role])
-            value=bytes.fromhex(selected['hex']) if selected else None
-            matches=[r for r in rows if bytes.fromhex(r['hex'])==reference]
-            comparisons[role]={'bits':len(reference)*8,'literal_occurrences':sum(1 for _ in core.find(reference)),
-                'reference_in_candidate_set':bool(matches),'exact_match':value==reference,
-                'hamming_distance_bits':sum((x^y).bit_count() for x,y in zip(value,reference)) if value is not None else None}
-    with tempfile.TemporaryDirectory(prefix='tlkh13-verify-') as directory:
-        scratch=Path(directory);pcap=scratch/'traffic.pcap';shutil.copyfile(a.case/'traffic.pcap',pcap)
-        def decrypt(text,name):
-            key=scratch/(name+'.keys');key.write_text(text)
-            result=subprocess.run(['tshark','-r',str(pcap),'-o',f'tls.keylog_file:{key}','-Y','http','-V'],capture_output=True,text=True,timeout=30)
-            (output/(name+'.private.txt')).write_text(result.stdout+'\n'+result.stderr)
-            def contains(value):return value in result.stdout or value.encode().hex() in result.stdout.lower().replace(':','')
-            return {'exit':result.returncode,'request':contains(event['request_path']),'response':contains(event['response_marker'])}
-        def keys(values):return ''.join(f'{role} {seal["client_random"]} {value.hex()}\n' for role,value in values.items())
-        positive=decrypt(a.reference.read_text(),'reference-sanity')
-        selected_result=None
-        if all(seal['selected_ids'].values()):
-            selected_values={role:bytes.fromhex(byid[identity]['hex']) for role,identity in seal['selected_ids'].items()}
-            selected_result=decrypt(keys(selected_values),'selected')
-        controls={}
-        for role in LABELS:
-            changed=dict(refs);bad=bytearray(changed[role]);bad[0]^=1;changed[role]=bytes(bad)
-            controls[role]=decrypt(keys(changed),'wrong-'+role)
-    negative_ok=not controls[LABELS[0]]['request'] and not controls[LABELS[1]]['response']
-    complete=bool(all(v['exact_match'] for v in comparisons.values()) and selected_result and selected_result['exit']==0 and selected_result['request'] and selected_result['response'] and negative_ok)
-    report={'case_id':a.case.name,'protocol':'TLS1.3','cipher':event['cipher'],'candidate_count':len(rows),
-        'memory_only_selection':seal['memory_only_selection'],'reference_comparison_after_seal':True,'selection_uses_pcap':True,
-        'reference_used_for_selection':False,'presence_audit_uses_reference':True,'core_sha256':seal['core_sha256'],'pcap_sha256':seal['pcap_sha256'],
-        'directional_comparisons':comparisons,'reference_sanity':positive,'selected_decryption':selected_result,
-        'one_bit_controls':controls,'complete_offline_recovery':complete}
-    (output/'summary.json').write_text(json.dumps(report,indent=2)+'\n')
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--case", type=Path, required=True)
+    parser.add_argument("--reference", type=Path, required=True)
+    args = parser.parse_args()
+    os.umask(0o077)
+    offline = args.case / "offline-tls13-pcap"
+    seal = json.loads((offline / "selection-seal.json").read_text())
+    raw = offline / "ranked-candidates.private.json"
+    if (digest(raw) != seal["candidate_file_sha256"] or
+            digest(args.case / "firefox.core") != seal["core_sha256"] or
+            digest(args.case / "traffic.pcap") != seal["pcap_sha256"]):
+        raise RuntimeError("Evidence hash mismatch")
+    rows = json.loads(raw.read_text())
+    by_id = {row["id"]: row for row in rows}
+    references = read_references(args.reference)
+    output = args.case / "verification-tls13"
+    output.mkdir(exist_ok=False)
+
+    streams = {}
+    comparisons = {}
+    reference_markers = {}
+    selected_markers = {}
+    one_bit_controls = {}
+    with CoreMemory(args.case / "firefox.core") as core:
+        for target in seal["targets"]:
+            target_id = target["id"]
+            reference = references.get((target["label"], target["client_random"]))
+            if reference is None:
+                raise RuntimeError(f"Missing target reference: {target_id}")
+            selected = by_id.get(seal["selected_ids"].get(target_id))
+            value = bytes.fromhex(selected["hex"]) if selected else None
+            comparisons[target_id] = {
+                "bits": len(reference) * 8,
+                "literal_occurrences": sum(1 for _ in core.find(reference)),
+                "reference_in_candidate_set": any(bytes.fromhex(row["hex"]) == reference for row in rows),
+                "exact_match": value == reference,
+                "hamming_distance_bits": (sum((left ^ right).bit_count()
+                                                for left, right in zip(value, reference))
+                                          if value is not None else None),
+            }
+            stream = target["stream"]
+            if stream not in streams:
+                streams[stream] = directional_records(args.case / "traffic.pcap", stream, target["server_port"])
+            records = streams[stream][target["direction"]]
+            reference_markers[target_id] = bool(authenticate_marker(
+                records, reference, target["cipher_suite"], target["marker"]))
+            selected_markers[target_id] = bool(value and authenticate_marker(
+                records, value, target["cipher_suite"], target["marker"]))
+            corrupted = bytearray(reference)
+            corrupted[0] ^= 1
+            one_bit_controls[target_id] = {"target_marker_rejected": not authenticate_marker(
+                records, bytes(corrupted), target["cipher_suite"], target["marker"])}
+
+    cross_flow_controls = {}
+    cross_generation_controls = {}
+    for target in seal["targets"]:
+        records = streams[target["stream"]][target["direction"]]
+        flow_peers = [other for other in seal["targets"]
+                      if other["id"] != target["id"] and other["label"] == target["label"]]
+        for other in flow_peers:
+            selected = by_id.get(seal["selected_ids"].get(other["id"]))
+            if selected:
+                key = f"{other['id']}=>{target['id']}"
+                cross_flow_controls[key] = not authenticate_marker(
+                    records, bytes.fromhex(selected["hex"]), target["cipher_suite"], target["marker"])
+        generation_peers = [other for other in seal["targets"]
+                            if other["id"] != target["id"] and other["flow_index"] == target["flow_index"]
+                            and other["direction"] == target["direction"]
+                            and other["generation"] != target["generation"]]
+        for other in generation_peers:
+            selected = by_id.get(seal["selected_ids"].get(other["id"]))
+            if selected:
+                key = f"{other['id']}=>{target['id']}"
+                cross_generation_controls[key] = not authenticate_marker(
+                    records, bytes.fromhex(selected["hex"]), target["cipher_suite"], target["marker"])
+
+    packet_condition = {"packet_condition_ok": True}
+    if seal["scenario"] == "keyupdate":
+        packet_condition = keyupdate_packet_evidence(
+            args.case / "traffic.pcap", args.reference, seal["targets"][0])
+    exact_ok = all(value["exact_match"] for value in comparisons.values())
+    markers_ok = all(reference_markers.values()) and all(selected_markers.values())
+    controls_ok = (all(value["target_marker_rejected"] for value in one_bit_controls.values()) and
+                   all(cross_flow_controls.values()) and all(cross_generation_controls.values()))
+    complete = bool(seal["condition_check"]["condition_ok"] and packet_condition["packet_condition_ok"] and
+                    seal["assignment_unique"] and exact_ok and markers_ok and controls_ok)
+    report = {
+        "case_id": args.case.name, "scenario": seal["scenario"], "protocol": "TLS1.3",
+        "candidate_count": len(rows), "target_count": len(seal["targets"]),
+        "condition_check": seal["condition_check"], "reference_comparison_after_seal": True,
+        "selection_uses_pcap": True, "selection_uses_direct_tls13_record_authentication": True,
+        "reference_used_for_selection": False, "presence_audit_uses_reference": True,
+        "core_sha256": seal["core_sha256"], "pcap_sha256": seal["pcap_sha256"],
+        "target_pass_counts": seal["target_pass_counts"], "assignment_unique": seal["assignment_unique"],
+        "directional_comparisons": comparisons, "reference_marker_checks": reference_markers,
+        "selected_marker_checks": selected_markers, "one_bit_controls": one_bit_controls,
+        "cross_flow_controls": cross_flow_controls, "cross_generation_controls": cross_generation_controls,
+        "packet_condition": packet_condition, "exact_match_all_targets": exact_ok,
+        "controlled_markers_all_targets": markers_ok, "wrong_secret_controls_all_pass": controls_ok,
+        "complete_offline_recovery": complete,
+    }
+    (output / "summary.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report))
 
-if __name__=='__main__':main()
+
+if __name__ == "__main__":
+    main()

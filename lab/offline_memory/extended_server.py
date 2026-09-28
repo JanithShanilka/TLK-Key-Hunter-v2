@@ -21,7 +21,7 @@ class OpenSSLConnection:
             'SSL_CTX_use_certificate_file': (C.c_int, [C.c_void_p, C.c_char_p, C.c_int]),
             'SSL_CTX_use_PrivateKey_file': (C.c_int, [C.c_void_p, C.c_char_p, C.c_int]),
             'SSL_CTX_set_ciphersuites': (C.c_int, [C.c_void_p, C.c_char_p]),
-            'SSL_CTX_set_num_tickets': (C.c_int, [C.c_void_p, C.c_size_t]),
+            'SSL_CTX_set_num_tickets': (C.c_long, [C.c_void_p, C.c_size_t]),
             'SSL_new': (C.c_void_p, [C.c_void_p]),
             'SSL_set_fd': (C.c_int, [C.c_void_p, C.c_int]),
             'SSL_accept': (C.c_int, [C.c_void_p]),
@@ -63,7 +63,8 @@ class OpenSSLConnection:
         return buf.raw[:n]
     def sendall(self, data):
         while data:
-            n = self.lib.SSL_write(self.ssl, data, len(data))
+            payload = C.create_string_buffer(data)
+            n = self.lib.SSL_write(self.ssl, payload, len(data))
             if n <= 0: raise RuntimeError('Controlled SSL_write failed')
             data = data[n:]
     def update(self):

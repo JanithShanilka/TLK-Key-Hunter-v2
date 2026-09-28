@@ -1,15 +1,22 @@
 import sys,struct,tempfile,unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'lab/offline_memory'))
+try:
+    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+except ImportError:
+    AESGCM = None
 from core_memory import CoreMemory
 from rank_tls13 import rank
 from test_offline_memory import make_core
-from validate_tls13 import LABELS, SUITES
+from validate_tls13 import LABELS
+from check_tls13_scenario import evaluate
+from tls13_packets import SUITES, authenticate_marker, parse_follow_output, traffic_key_iv
 
 class TLS13Tests(unittest.TestCase):
     def test_directional_labels_and_suite_hash_lengths(self):
         self.assertEqual(LABELS, ('CLIENT_TRAFFIC_SECRET_0', 'SERVER_TRAFFIC_SECRET_0'))
-        self.assertEqual(SUITES, {'0x1301': 32, '0x1302': 48, '0x1303': 32})
+        self.assertEqual({key: value['secret_bytes'] for key, value in SUITES.items()},
+                         {'0x1301': 32, '0x1302': 48, '0x1303': 32})
 
     def test_mixed_hash_lengths_and_reject_other_shapes(self):
         payload=bytearray(1024)
@@ -21,5 +28,48 @@ class TLS13Tests(unittest.TestCase):
             with CoreMemory(path) as core:rows=rank(core)
         self.assertEqual(sorted(x['length'] for x in rows),[32,48])
         self.assertTrue(all(len(x['locations'])==1 for x in rows))
+
+    @unittest.skipIf(AESGCM is None, 'cryptography is required for direct TLS record authentication')
+    def test_direct_record_authentication_and_wrong_secret(self):
+        secret=bytes(range(48));marker=b'/controlled/request'
+        key,iv=traffic_key_iv(secret,'0x1302')
+        plaintext=marker+b' HTTP/1.1\r\n'+bytes([23])
+        header=bytes([23,3,3])+ (len(plaintext)+16).to_bytes(2,'big')
+        record=header+AESGCM(key).encrypt(iv,plaintext,header)
+        self.assertEqual(len(authenticate_marker([record],secret,'0x1302',marker)),1)
+        changed=bytearray(secret);changed[0]^=1
+        self.assertEqual(authenticate_marker([record],bytes(changed),'0x1302',marker),[])
+
+    def test_parse_follow_output_preserves_directions(self):
+        output='''Node 0: 127.0.0.1:50123
+Node 1: 127.0.0.1:18443
+1603030001aa
+\t1603030001bb
+'''
+        nodes,data=parse_follow_output(output)
+        self.assertEqual(nodes,{0:50123,1:18443})
+        self.assertEqual(data[0],bytes.fromhex('1603030001aa'))
+        self.assertEqual(data[1],bytes.fromhex('1603030001bb'))
+
+    def test_scenario_conditions_are_distinct(self):
+        connection=lambda stream,port,random:{'stream':stream,'client_port':port,'server_port':18443,
+            'client_random':random,'cipher_suite':'0x1302','supported_version':'0x0304',
+            'client_extensions':[0,41],'server_extensions':[43,41]}
+        flow=lambda index,port:{'index':index,'peer_port':port,'protocol':'TLSv1.3',
+            'cipher':'TLS_AES_256_GCM_SHA384','request_path':f'/flow/{index}',
+            'response_marker':f'response-{index}','accepted_monotonic':10+index,
+            'request_monotonic':11+index,'response_monotonic':12+index,'closed_monotonic':20}
+        acquisition={'capture_started_monotonic':42.5,'capture_ended_monotonic':43}
+        delayed=evaluate('delayed',[flow(0,5000)],[connection(0,5000,'a'*64)],acquisition)
+        self.assertTrue(delayed['condition_ok'])
+        first,second=flow(0,5000),flow(1,5001)
+        first['session_reused']=False;second['session_reused']=True
+        connections=[connection(0,5000,'a'*64),connection(1,5001,'b'*64)]
+        connections[0]['server_extensions']=[43]
+        resumed=evaluate('resumption',[first,second],connections,acquisition)
+        self.assertTrue(resumed['condition_ok'])
+        second['session_reused']=False
+        self.assertIn('server_resumption_state_invalid',
+                      evaluate('resumption',[first,second],connections,acquisition)['condition_failures'])
 
 if __name__=='__main__':unittest.main(verbosity=2)
