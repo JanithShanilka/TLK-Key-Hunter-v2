@@ -118,6 +118,9 @@ def serve(args):
                 if args.scenario=='before-response':
                     (case/'capture.ready').touch()
                     wait_for(lambda:(case/'release-server').exists(),180)
+                if args.scenario=='keyupdate':
+                    conn.update(); flow['update_requested_monotonic']=time.monotonic();publish()
+                    (case/'first-complete').touch()
                 first = args.scenario=='resumption' and index==0
                 redirect = (f'https://localhost:{args.port}/offline/{case.name}/second'
                             if first or args.scenario == 'keyupdate' else None)
@@ -130,8 +133,6 @@ def serve(args):
                 elif args.scenario=='concurrency' and index==0:
                     (case/'first-complete').touch()
                 elif args.scenario=='keyupdate':
-                    conn.update(); flow['update_requested_monotonic']=time.monotonic();publish()
-                    (case/'first-complete').touch()
                     flow['post_request_path']=request(conn)
                     flow['post_response_marker']=f'TLSKH-EXT|{case.name}|flow0|POST-UPDATE'
                     response(conn,flow['post_response_marker'])
