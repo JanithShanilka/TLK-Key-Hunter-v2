@@ -90,9 +90,11 @@ def serve(args):
             data += conn.recv(4096)
             if len(data)>65536: raise RuntimeError('Request exceeds limit')
         return data.split(b'\r\n')[0].decode().split(' ')[1]
-    def response(conn, marker, complete=False, close=False):
+    def response(conn, marker, complete=False, close=False, location=None):
         body = marker.encode()
-        conn.sendall(b'HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nTransfer-Encoding: chunked\r\nConnection: '+(b'close' if close else b'keep-alive')+b'\r\n\r\n'+f'{len(body):x}\r\n'.encode()+body+b'\r\n'+(b'0\r\n\r\n' if complete else b''))
+        status = b'302 Found' if location else b'200 OK'
+        redirect = b'Location: ' + location.encode() + b'\r\n' if location else b''
+        conn.sendall(b'HTTP/1.1 '+status+b'\r\n'+redirect+b'Content-Type: text/plain\r\nTransfer-Encoding: chunked\r\nConnection: '+(b'close' if close else b'keep-alive')+b'\r\n\r\n'+f'{len(body):x}\r\n'.encode()+body+b'\r\n'+(b'0\r\n\r\n' if complete else b''))
     with socket.socket() as listener:
         listener.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
         listener.bind(('127.0.0.1',args.port)); listener.listen(4); listener.settimeout(60)
@@ -117,7 +119,10 @@ def serve(args):
                     (case/'capture.ready').touch()
                     wait_for(lambda:(case/'release-server').exists(),180)
                 first = args.scenario=='resumption' and index==0
-                response(conn,flow['response_marker'],complete=first or args.scenario=='keyupdate',close=first)
+                redirect = (f'https://localhost:{args.port}/offline/{case.name}/second'
+                            if first else None)
+                response(conn,flow['response_marker'],complete=first or args.scenario=='keyupdate',
+                         close=first,location=redirect)
                 flow['response_monotonic']=time.monotonic(); publish()
                 if first:
                     conn.close(); connections.remove(conn); flow['closed_monotonic']=time.monotonic();publish()

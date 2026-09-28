@@ -50,3 +50,11 @@ RFC 8446 sections 4.2.11, 4.6.3, and 7.2 define negotiated PSK resumption and di
 - The prior validated code avoided the same behavior by copying the PCAP into an ephemeral temporary directory. The new parser now does likewise for field extraction and TCP reassembly; the copy stays on the controlled host and is automatically removed.
 - KeyUpdate packet evidence no longer asks TShark to open a root-only key log. It directly authenticates the server `update_requested` message and client response under the independent generation-zero references after selection is sealed.
 - Test suite after repair: 16/16 with the bundled cryptographic runtime; the system interpreter passes the 14 non-cryptographic tests and skips the two AES-GCM checks.
+
+## Pilot observations and resumption amendment
+
+- `TLS13-EXT-BEFORE-PILOT-20260928-A`: 1/1 complete. Capture started 0.227 seconds after the request and ended 7.765 seconds before the response. Ten candidates; one winner for each generation-zero direction; exact reference equality, both controlled markers, all one-bit controls, and cleanup passed.
+- `TLS13-EXT-DELAYED-PILOT-20260928-A`: 1/1 complete. Capture started 30.060 seconds after the response. Twelve candidates; one winner per direction; exact equality, markers, controls, and cleanup passed.
+- `TLS13-EXT-RESUMPTION-PILOT-20260928-A`: 0/1, condition-stage tool failure. Acquisition completed, but the condition parser stopped on an incomplete third ClientHello. The two completed flows showed full then resumed server state, and the resumed ClientHello/ServerHello both included PSK extension 41; no extraction or verification ran, so the attempt remains unsuccessful rather than being reclassified.
+- Amendment before resumption pilot B: bind only completed handshakes to completed server flows. Change the first response to an explicit close-and-redirect to the second controlled path, removing reliance on a browser favicon race. The failed A core/profile remain private on the lab host for inspection.
+- Test suite after the amendment: 17/17 with the cryptographic runtime; 15 non-cryptographic tests pass under the system interpreter and two AES-GCM tests are skipped there.

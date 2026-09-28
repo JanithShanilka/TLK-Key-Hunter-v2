@@ -1,4 +1,5 @@
 import sys,struct,tempfile,unittest
+from unittest.mock import patch
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'lab/offline_memory'))
 try:
@@ -11,7 +12,7 @@ from test_offline_memory import make_core
 from validate_tls13 import LABELS
 from check_tls13_scenario import evaluate
 from tls13_packets import (SUITES, authenticate_keyupdate, authenticate_marker,
-                           parse_follow_output, traffic_key_iv)
+                           inspect_connections, parse_follow_output, traffic_key_iv)
 
 class TLS13Tests(unittest.TestCase):
     def test_directional_labels_and_suite_hash_lengths(self):
@@ -60,6 +61,16 @@ Node 1: 127.0.0.1:18443
         self.assertEqual(nodes,{0:50123,1:18443})
         self.assertEqual(data[0],bytes.fromhex('1603030001aa'))
         self.assertEqual(data[1],bytes.fromhex('1603030001bb'))
+
+    def test_incomplete_extra_client_hello_is_not_a_connection(self):
+        client_rows=[
+            ['0','5000','18443','a'*64,'0x1301,0x1302','0x0304','0,43'],
+            ['1','5001','18443','b'*64,'0x1301,0x1302','0x0304','0,43,41']]
+        server_rows=[['0','18443','5000','c'*64,'0x1302','0x0304','43,51']]
+        with patch('tls13_packets.tshark_fields',side_effect=[client_rows,server_rows]):
+            connections=inspect_connections(Path('/unused.pcap'))
+        self.assertEqual(len(connections),1)
+        self.assertEqual(connections[0]['client_port'],5000)
 
     def test_scenario_conditions_are_distinct(self):
         connection=lambda stream,port,random:{'stream':stream,'client_port':port,'server_port':18443,

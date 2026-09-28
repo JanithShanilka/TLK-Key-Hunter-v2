@@ -60,7 +60,11 @@ def inspect_connections(pcap):
             "supported_version": row[5].lower(),
             "server_extensions": extension_types(row[6]),
         })
-    connections = sorted(by_stream.values(), key=lambda item: item["stream"])
+    # A browser may begin another connection while the controlled server is
+    # deliberately holding its accepted flows. Only completed handshakes can
+    # be bound to a server event and counted as scenario connections.
+    connections = sorted((item for item in by_stream.values() if "cipher_suite" in item),
+                         key=lambda item: item["stream"])
     for item in connections:
         if not item.get("client_random") or len(item["client_random"]) != 64:
             raise RuntimeError("Missing TLS ClientHello random")
