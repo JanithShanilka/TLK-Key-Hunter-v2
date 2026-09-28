@@ -166,3 +166,11 @@ Installation will not include a general system upgrade or reboot. Verify the res
 - Froze the capture, reader, ranker, validator and verifier hashes before `FIREFOX-TLS13-CORE-VALIDATION-001`. The fresh case negotiated the same suite and produced ten candidates. It independently produced one client winner and one server winner; both matched exactly and decrypted request and response.
 - Directional one-bit controls behaved as expected in both cases: corrupting the client secret prevented request recovery only, while corrupting the server secret prevented response recovery only. References remained root-only until selection was sealed.
 - Memory-only candidate discovery does not assign traffic-secret roles. Packet validation remains part of the complete recovery method. The two successful cases justify a bounded 20-session campaign; they are not themselves a repeatability rate.
+
+### TLS 1.3 repeatability campaign completion
+
+- Campaign `TLS13-REPEAT-20260928-A` completed without interruption: 20/20 fresh sessions achieved complete offline recovery. Every session uniquely selected one client and one server application traffic secret through saved-PCAP validation, matched both independent references exactly with zero differences out of 384 bits, and decrypted both controlled HTTP markers.
+- All sessions negotiated `TLS_AES_256_GCM_SHA384`. Four sessions produced nine candidates and sixteen produced ten, for 196 candidates total. Memory-only discovery still did not assign directional roles.
+- All 20 directional negative controls behaved as expected: changing the client secret blocked request recovery only; changing the server secret blocked response recovery only. Median end-to-end session time was 51.01 seconds.
+- Every result row records deletion of its raw core and disposable profile/runtime after durable result saving. Final allocated storage across retained pilot cases was 995,569,664 bytes. Only non-secret summary, manifest and JSON/CSV records were downloaded and versioned.
+- Detailed conclusions and limits are recorded in `TLS13_REPEATABILITY_RESULTS.md`. The periodic monitor was deleted after completion and no further capture was launched.

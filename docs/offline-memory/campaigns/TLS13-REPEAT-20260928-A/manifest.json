@@ -1,0 +1,27 @@
+{
+  "started": "2026-09-28T11:15:00.512407+00:00",
+  "settings": {
+    "workspace": "/home/researcher/research/TLSKeyHunter-memory-pilot",
+    "campaign_id": "TLS13-REPEAT-20260928-A",
+    "count": 20,
+    "interval_seconds": 600,
+    "start_delay_seconds": 0,
+    "budget_gib": 8.0,
+    "minimum_free_gib": 20.0,
+    "capture_python": "/home/researcher/.venv/bin/python",
+    "lab_disable_socket_sandbox": true,
+    "lab_accept_insecure_certs": true
+  },
+  "script_sha256": {
+    "capture_firefox.py": "5b2bdfecc1bfb339be9365ac378a512a803980841d111e2fd47e71ee402d2665",
+    "core_memory.py": "695e0e885f0363943935b0317233a48884ad0a4ab984c66bc1b64d62cf5cd431",
+    "rank_core.py": "cdee1797ce5c48493017b51517a4ab51c254f98a599aa5268a57e27deaeddd1f",
+    "rank_tls13.py": "96d0427233b6eba9adac89e87d9970ec63e98e27ee876e6e9f2d9cd0805a5138",
+    "validate_tls13.py": "a66442d8023d6b85ecf814812a4e51971f4c285eba9b80da729971dfc1c774e6",
+    "verify_tls13.py": "27ca77822264ca773ab54e6d147b3fab8d4e4bda8dc882094af4c4728428028a",
+    "run_campaign_tls13.py": "cd2f354e7e89fd2757eacdc60877f41f3cdcf936db7566a7ccfb678554da061d"
+  },
+  "retention": "After verification and durable result save, delete raw core, disposable profile and runtime. Keep compact evidence. Interrupted/setup failures stop for inspection.",
+  "protocol": "TLS1.3",
+  "design": "Fresh full TLS 1.3 connection per attempt; fixed CKA_VALUE 32/48-byte candidate method, directional PCAP validation, then independent reference verification."
+}

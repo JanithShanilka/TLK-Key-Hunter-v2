@@ -1,0 +1,1302 @@
+[
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-001",
+    "started": "2026-09-28T11:15:00.707664+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "1517207a640715a22a7038f87de58b2f96be7e9464a4d8f2e79a01884cbb2ef6",
+    "pcap_sha256": "403e69d00392f622c833f9eaf0e00dde6006f1eeac59df956376e65e31728c71",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9195092704,
+    "dump_allocated_bytes": 304730112,
+    "ended": "2026-09-28T11:16:18.159758+00:00",
+    "elapsed_seconds": 77.45213054306805,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T11:16:18.304757+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-002",
+    "started": "2026-09-28T11:25:01.636284+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "872d1539464cb6c1dacb8f3f82a20b655ee6ed3332529b483ed09619b79c7d13",
+    "pcap_sha256": "fe040aadc5e2e92e8cb92c79c8c4d3ce64243d4c4c0fb41c9fe10b91db0c3441",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9182696688,
+    "dump_allocated_bytes": 293466112,
+    "ended": "2026-09-28T11:25:51.924169+00:00",
+    "elapsed_seconds": 50.2879240559414,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T11:25:52.060095+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-003",
+    "started": "2026-09-28T11:35:02.396153+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 9,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "1c6d8a2928c12e48fcd422553c56e8bf71a8e69487bfe9266c703056f680e1df",
+    "pcap_sha256": "8061746e3cd262a10433168123e7213d2f483fb752e3d5c96b5d60db6c4a7888",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9183235480,
+    "dump_allocated_bytes": 290205696,
+    "ended": "2026-09-28T11:36:21.142754+00:00",
+    "elapsed_seconds": 78.74663727171719,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T11:36:21.285534+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-004",
+    "started": "2026-09-28T11:45:02.639865+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 9,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "01ca4a5a517c5a9a01f515794687d282f8020b1fe7e790ff3ed933d08abd1620",
+    "pcap_sha256": "483550d8aca139a99791e29649245af40956692ab1b5fe58522d196f78a8b103",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9197156656,
+    "dump_allocated_bytes": 305479680,
+    "ended": "2026-09-28T11:45:55.141430+00:00",
+    "elapsed_seconds": 52.5016030902043,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T11:45:55.289021+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-005",
+    "started": "2026-09-28T11:55:03.614521+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "8089f8930ef32dd7539d6339a73a8146be481965d2e41f118ea80b53ee0967e8",
+    "pcap_sha256": "a23419639c99bb67b91e223a5593cf3e03f3a9c713871587ea9f8178d98f6491",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9191670896,
+    "dump_allocated_bytes": 301010944,
+    "ended": "2026-09-28T11:55:53.742551+00:00",
+    "elapsed_seconds": 50.12806806107983,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T11:55:53.879528+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-006",
+    "started": "2026-09-28T12:05:04.194246+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "24561cd6225318a92f4f122e56953caac01771d8be75e369ab295f4ab730fda4",
+    "pcap_sha256": "f346bff0d4fdccc36aef8f6c1a16e82178c5daa1e0bcf1b3c592b49bbd226e4f",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9191184560,
+    "dump_allocated_bytes": 300359680,
+    "ended": "2026-09-28T12:05:53.349056+00:00",
+    "elapsed_seconds": 49.15484659699723,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T12:05:53.475991+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-007",
+    "started": "2026-09-28T12:15:04.791661+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "727d7d2a51a7cb6a2f7ecd502745545f686d0dbb667bab86518e501044b231d6",
+    "pcap_sha256": "ee1e291499f1492c42e68bd72c7637fbf75d369d5f2ae227b2dd8f6bc7b91723",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9185524896,
+    "dump_allocated_bytes": 288415744,
+    "ended": "2026-09-28T12:15:54.873993+00:00",
+    "elapsed_seconds": 50.08236650004983,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T12:15:55.003695+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-008",
+    "started": "2026-09-28T12:25:05.328598+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "aff1b5213ac60195319d1689685d2f4da84778f82e16e429531b0067a523e02a",
+    "pcap_sha256": "8bc37ee589c7d65cab797a85612d86252528e22dcc7b0a88c0e406a2b50c5e60",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9183730440,
+    "dump_allocated_bytes": 291213312,
+    "ended": "2026-09-28T12:25:55.492828+00:00",
+    "elapsed_seconds": 50.164265842176974,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T12:25:55.630816+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-009",
+    "started": "2026-09-28T12:35:05.966821+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "433c38c723f2f5ab9e278b38a2e44b9e04696482362ecc3c384db964095cb606",
+    "pcap_sha256": "dbd24e131ad8d361e1a36d224853fc96b47acd3e5762a44443e2296e558199a8",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9190377048,
+    "dump_allocated_bytes": 298561536,
+    "ended": "2026-09-28T12:35:56.081195+00:00",
+    "elapsed_seconds": 50.114452828187495,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T12:35:56.254671+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-010",
+    "started": "2026-09-28T12:45:06.604333+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "04cb6f5e8e0c061a0773f0f91e1c50037d0de240a0c1617fa692b1c6d4aac56a",
+    "pcap_sha256": "f799dd13462a581682e4714afe360f0becdfaeb964b50d82be72f0001ce6625a",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9182402904,
+    "dump_allocated_bytes": 290443264,
+    "ended": "2026-09-28T12:45:56.850010+00:00",
+    "elapsed_seconds": 50.24571251589805,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T12:45:56.992482+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-011",
+    "started": "2026-09-28T12:55:07.320187+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "471ba1cc216e84874f363e68d6c036754dbf6a96ec7ac80d32dd772a0cb6e9b6",
+    "pcap_sha256": "41f14e7ae6cee63957d6be6842a95e404e4647ae7f6d3b5a1ea3ccac678f7ce5",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9185071976,
+    "dump_allocated_bytes": 291397632,
+    "ended": "2026-09-28T12:56:02.328312+00:00",
+    "elapsed_seconds": 55.00816484261304,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T12:56:02.473505+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-012",
+    "started": "2026-09-28T13:05:07.806880+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "db28f1f85bd7547b29023f785d6d5a7d63f01e5963837dbd59d48a503f8efa2b",
+    "pcap_sha256": "009edce8d96b7ad373fc7bd2bc9b488e27ea15a3dcda61dfa7d282ca96489dca",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9184285784,
+    "dump_allocated_bytes": 291815424,
+    "ended": "2026-09-28T13:05:59.241695+00:00",
+    "elapsed_seconds": 51.434853746090084,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T13:05:59.400242+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-013",
+    "started": "2026-09-28T13:15:08.721247+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "34682d2955da6e80056156ae9504a89821425eca02bbf6894a1f06ac5cf0a14e",
+    "pcap_sha256": "fa0a53f7ce768dab9712e0b79b7810e67533effdad31420298e57e49a2d2619d",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9188842168,
+    "dump_allocated_bytes": 294547456,
+    "ended": "2026-09-28T13:16:07.606883+00:00",
+    "elapsed_seconds": 58.88567291200161,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T13:16:07.740493+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-014",
+    "started": "2026-09-28T13:25:09.069292+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 9,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "cbd60d2a637d5f95f63d7607417c0e222e0085104e7ccb82667e7a260834021b",
+    "pcap_sha256": "baa3bee24560b0caa4c732232f19d4cd3ad6480e5f9646defdb2890e44c09952",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9180583768,
+    "dump_allocated_bytes": 289177600,
+    "ended": "2026-09-28T13:26:02.603314+00:00",
+    "elapsed_seconds": 53.534079264849424,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T13:26:02.747195+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-015",
+    "started": "2026-09-28T13:35:10.087241+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "580a561ab4c41ca487334545d41da63ffd096b896cc1dd720b037ce99a959bdd",
+    "pcap_sha256": "c4d02e81ad1720eca3823fd18f8e0e45290421ba3bde7fca7b8af344d808aa68",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9186212272,
+    "dump_allocated_bytes": 295481344,
+    "ended": "2026-09-28T13:36:04.853322+00:00",
+    "elapsed_seconds": 54.76611894881353,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T13:36:04.994621+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-016",
+    "started": "2026-09-28T13:45:10.327642+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "53f1f908fcee922e4d8fcc25b5d98d88acfc18aa0ef50188fb1af76d6acb3c08",
+    "pcap_sha256": "6ad3fde0815b84bc2721de185bacf85acf34e5a730bb7efcb3988e12b776f88f",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9201155472,
+    "dump_allocated_bytes": 305590272,
+    "ended": "2026-09-28T13:46:11.617308+00:00",
+    "elapsed_seconds": 61.28970253420994,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T13:46:11.766687+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-017",
+    "started": "2026-09-28T13:55:11.120721+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "bcdc5227a945591b3a114fef7873255ac908e5d63d2c54a8ebd3f4a5b38394ea",
+    "pcap_sha256": "5cde9f52d09b28d81a960383779c3ee19af67fbbdf301c0d2e951e2a21a69a02",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9191070608,
+    "dump_allocated_bytes": 299180032,
+    "ended": "2026-09-28T13:56:01.523444+00:00",
+    "elapsed_seconds": 50.40275974245742,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T13:56:01.685579+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-018",
+    "started": "2026-09-28T14:05:12.023999+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 9,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "0add1a577b292e8386f09499d4d786f64217be6cc6f4ef6636b6e57eac14b330",
+    "pcap_sha256": "d131425b942047f819c540810b703fc17c6eb1e0df4ef5fd2c5080fff8504039",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9184769384,
+    "dump_allocated_bytes": 292237312,
+    "ended": "2026-09-28T14:06:03.469503+00:00",
+    "elapsed_seconds": 51.44553723093122,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T14:06:03.614362+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-019",
+    "started": "2026-09-28T14:15:12.961216+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "26b4bf1695c4620eb8cb9d61b0e37c9307a09aaaff80af6976658c14afc27c39",
+    "pcap_sha256": "dcbc0eb0382bf4bb9ec36427e24680bb71a75425e9ca47ee54f5c6a589c541f0",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9189524448,
+    "dump_allocated_bytes": 296697856,
+    "ended": "2026-09-28T14:16:03.546766+00:00",
+    "elapsed_seconds": 50.58560163201764,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T14:16:03.730724+00:00"
+  },
+  {
+    "case_id": "TLS13-REPEAT-20260928-A-020",
+    "started": "2026-09-28T14:25:13.077984+00:00",
+    "status": "success",
+    "complete_offline_recovery": true,
+    "candidate_count": 10,
+    "client_packet_pass_count": 1,
+    "server_packet_pass_count": 1,
+    "protocol": "TLS1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "memory_only_selection": "unassigned_candidates",
+    "reference_comparison_after_seal": true,
+    "selection_uses_pcap": true,
+    "reference_used_for_selection": false,
+    "presence_audit_uses_reference": true,
+    "core_sha256": "6f2217a2af6270f6f09a6a7ceb5ffee512b4926a83b75000294c5d46793a6308",
+    "pcap_sha256": "8d9f49d1f9197dee5ac6e3b2ac0f2865545bc5bde88348fca433ba1e5dfd94ad",
+    "directional_comparisons": {
+      "SERVER_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      },
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "bits": 384,
+        "literal_occurrences": 1,
+        "reference_in_candidate_set": true,
+        "exact_match": true,
+        "hamming_distance_bits": 0
+      }
+    },
+    "reference_sanity": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "selected_decryption": {
+      "exit": 0,
+      "request": true,
+      "response": true
+    },
+    "one_bit_controls": {
+      "CLIENT_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": false,
+        "response": true
+      },
+      "SERVER_TRAFFIC_SECRET_0": {
+        "exit": 0,
+        "request": true,
+        "response": false
+      }
+    },
+    "client_exact_match": true,
+    "server_exact_match": true,
+    "dump_apparent_bytes": 9188498720,
+    "dump_allocated_bytes": 296263680,
+    "ended": "2026-09-28T14:26:03.630790+00:00",
+    "elapsed_seconds": 50.55284547805786,
+    "raw_dump_deleted": true,
+    "disposable_profile_deleted": true,
+    "cleanup_completed": "2026-09-28T14:26:03.781024+00:00"
+  }
+]

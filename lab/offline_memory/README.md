@@ -1,8 +1,8 @@
 # Saved-memory development pilot
 
-Status: experimental. No successful offline Firefox secret recovery is claimed by the presence of these scripts.
+Status: active saved-memory thesis workflow. Evidence is limited to the recorded offline cases and campaigns; script availability alone does not establish recovery.
 
-This is separate from the published live Frida experiments. The first target is Firefox 136.0.2/NSS on the existing controlled Linux x86-64 host, using one localhost TLS 1.2 connection.
+The live-hook experiment and all its benchmarks are retired and excluded from thesis use. This workflow targets Firefox 136.0.2/NSS on the controlled Linux x86-64 host. See the [governing scope](../../thesis-governance/THESIS_SCOPE.md).
 
 ## Components
 
@@ -12,7 +12,7 @@ This is separate from the published live Frida experiments. The first target is 
 - `validate_candidates.py`: optionally tests sealed candidates against a saved single-connection PCAP, without a reference secret; selects only a unique candidate producing parsed HTTP request and response. This is packet-assisted selection and is reported separately from the memory ranker.
 - `verify_core.py`: runs only after output sealing. It compares the independently selected candidate with the isolated reference, checks literal reference presence separately, and tests capture decryption. Reference-only sanity decryption is never counted as extraction success.
 
-The single-snapshot method is not the original arg_ranker configuration D: it has no call argument list, before/after-call evidence or repeated-call history. Do not pool its results with the live experiments.
+The single-snapshot method uses no call argument list, before/after-call evidence or repeated-call history. The retired live-hook results are not part of its evaluation.
 
 ## Isolation and execution
 
@@ -116,3 +116,5 @@ The permanent finding is recorded in [Live-session secrets and offline recovery]
 The first development case and a subsequent fresh validation case both negotiated `TLS_AES_256_GCM_SHA384`. Development returned nine candidates; validation returned ten. In each case, packet validation found exactly one client and one server application traffic secret. Both directional secrets matched their independent references with zero differing bits out of 384, and together decrypted both controlled HTTP markers. Corrupting the client secret broke request recovery while leaving the response; corrupting the server secret produced the reverse outcome.
 
 These two cases establish feasibility for the fixed campaign method in this lab, while memory-only role assignment remains unresolved. `run_campaign_tls13.py` freezes the TLS 1.3 scripts, runs fresh sessions sequentially, records all failures, and deletes each completed case's raw core/profile only after durable verification results are saved. Its records must remain separate from the TLS 1.2 campaign.
+
+The 20-session campaign is complete. See [TLS 1.3 repeatability results](../../docs/offline-memory/TLS13_REPEATABILITY_RESULTS.md) for the full non-secret outcome, controls, retention evidence and scope limits.
