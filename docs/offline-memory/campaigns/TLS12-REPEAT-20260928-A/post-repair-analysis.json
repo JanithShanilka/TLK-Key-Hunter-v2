@@ -1,0 +1,44 @@
+{
+  "kind": "post_permission_repair_reanalysis",
+  "original_failed_attempt_preserved": true,
+  "new_capture": false,
+  "verified_result": {
+    "candidate_count": 5,
+    "candidates_strictly_above_reference": 0,
+    "candidates_tied_with_reference": 5,
+    "case_id": "TLS12-REPEAT-20260928-A-001",
+    "complete_offline_recovery": true,
+    "core_sha256": "0fe0b5aeb0d90dbbd0e215fccb8ed534860cbc990c9b2c793f09ce2c7af145f6",
+    "kind": "exploratory_single_case",
+    "one_bit_reference_control": {
+      "request": false,
+      "response": false,
+      "tshark_exit": 0
+    },
+    "pcap_sha256": "730e219d4e1fa4830af909e9823d193949cc4f26ee9fe11192b814ebdb568e79",
+    "presence_audit_uses_reference": true,
+    "reference_comparison_after_selection_seal": true,
+    "reference_in_candidate_set": true,
+    "reference_literal_occurrences": 1,
+    "reference_literal_present_in_captured_segments": true,
+    "reference_only_decryption_sanity": {
+      "request": true,
+      "response": true,
+      "tshark_exit": 0
+    },
+    "reference_score": 75,
+    "selected_decryption": {
+      "request": true,
+      "response": true,
+      "tshark_exit": 0
+    },
+    "selected_exact_match": true,
+    "selected_hamming_distance_bits": 0,
+    "selection_method": "experimental_cka-value48_single_snapshot_pcap_validation",
+    "selection_status": "selected",
+    "selection_uses_pcap": true
+  },
+  "time": "2026-09-27T19:11:56.976772+00:00",
+  "raw_dump_deleted": true,
+  "disposable_profile_deleted": true
+}

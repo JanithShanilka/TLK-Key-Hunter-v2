@@ -1,0 +1,14 @@
+{
+  "state": "stopped_stage_failure",
+  "started": "2026-09-27T19:08:43.749763+00:00",
+  "campaign_id": "TLS12-REPEAT-20260928-A",
+  "planned": 20,
+  "current_case": "TLS12-REPEAT-20260928-A-001",
+  "ended": "2026-09-27T19:09:01.463449+00:00",
+  "attempted": 1,
+  "successful": 0,
+  "unsuccessful": 1,
+  "observed_success_fraction": 0.0,
+  "updated": "2026-09-27T19:09:01.463474+00:00",
+  "allocated_case_bytes": 1327001600
+}

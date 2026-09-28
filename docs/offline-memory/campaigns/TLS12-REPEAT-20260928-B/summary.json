@@ -1,0 +1,14 @@
+{
+  "state": "completed",
+  "started": "2026-09-27T19:11:57.147460+00:00",
+  "campaign_id": "TLS12-REPEAT-20260928-B",
+  "planned": 19,
+  "current_case": "TLS12-REPEAT-20260928-B-019",
+  "ended": "2026-09-27T22:19:41.627705+00:00",
+  "attempted": 19,
+  "successful": 19,
+  "unsuccessful": 0,
+  "observed_success_fraction": 1.0,
+  "updated": "2026-09-27T22:19:41.627743+00:00",
+  "allocated_case_bytes": 989298688
+}

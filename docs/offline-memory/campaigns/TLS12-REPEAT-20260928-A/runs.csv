@@ -1,0 +1,2 @@
+case_id,started,ended,status,failed_stage,candidate_count,top_tie_count,packet_pass_count,reference_in_candidate_set,selected_exact_match,complete_offline_recovery,elapsed_seconds,dump_apparent_bytes,dump_allocated_bytes
+TLS12-REPEAT-20260928-A-001,2026-09-27T19:08:43.887224+00:00,2026-09-27T19:09:01.361012+00:00,failed,rank,,,,,,False,17.473852786701173,9200173552,306221056

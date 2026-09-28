@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "TLS12-REPEAT-20260928-A-001",
+    "started": "2026-09-27T19:08:43.887224+00:00",
+    "status": "failed",
+    "complete_offline_recovery": false,
+    "failed_stage": "rank",
+    "error": "stage_exit_2",
+    "dump_apparent_bytes": 9200173552,
+    "dump_allocated_bytes": 306221056,
+    "ended": "2026-09-27T19:09:01.361012+00:00",
+    "elapsed_seconds": 17.473852786701173
+  }
+]

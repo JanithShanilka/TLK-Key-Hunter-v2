@@ -1,0 +1,25 @@
+{
+  "started": "2026-09-27T19:08:43.748268+00:00",
+  "settings": {
+    "workspace": "/home/researcher/research/TLSKeyHunter-memory-pilot",
+    "campaign_id": "TLS12-REPEAT-20260928-A",
+    "count": 20,
+    "interval_seconds": 600,
+    "budget_gib": 8.0,
+    "minimum_free_gib": 20.0,
+    "capture_python": "/home/researcher/.venv/bin/python",
+    "lab_disable_socket_sandbox": true,
+    "lab_accept_insecure_certs": true
+  },
+  "script_sha256": {
+    "capture_firefox.py": "422dd83969dfed170df1f2196caa85a922e26be537226ec302939a2bd0a7a8b1",
+    "core_memory.py": "695e0e885f0363943935b0317233a48884ad0a4ab984c66bc1b64d62cf5cd431",
+    "rank_core.py": "cdee1797ce5c48493017b51517a4ab51c254f98a599aa5268a57e27deaeddd1f",
+    "validate_candidates.py": "e321696de87f8d1473ec9b369c5725b5f5f7675f38650661ec24dfe79709432b",
+    "verify_core.py": "9d419922ca434a3b3c03a558feaa91a5349c7480024cefbefd2f00a55449830d",
+    "run_campaign.py": "70bb6c68d390edd648056ecb90096e777c37b8baf050486d8d5782c4a2a90b39"
+  },
+  "retention": "After verification and durable result save, delete raw core, disposable profile and runtime. Keep compact evidence. Interrupted/setup failures stop for inspection.",
+  "protocol": "TLS1.2",
+  "design": "Fresh Firefox profile/connection per attempt; fixed CKA_VALUE method plus separate PCAP validation."
+}
