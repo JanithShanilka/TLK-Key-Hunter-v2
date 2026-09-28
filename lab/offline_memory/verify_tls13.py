@@ -25,10 +25,10 @@ def read_references(path):
 
 
 def keyupdate_packet_evidence(targets, streams, references):
-    client = next(target for target in targets if target["label"] == "CLIENT_TRAFFIC_SECRET_0")
-    server = next(target for target in targets if target["label"] == "SERVER_TRAFFIC_SECRET_0")
-    client_secret = references[(client["label"], client["client_random"])]
-    server_secret = references[(server["label"], server["client_random"])]
+    client = next(target for target in targets if target["direction"] == "client")
+    server = next(target for target in targets if target["direction"] == "server")
+    client_secret = references[("CLIENT_TRAFFIC_SECRET_0", client["client_random"])]
+    server_secret = references[("SERVER_TRAFFIC_SECRET_0", server["client_random"])]
     server_requested = bool(authenticate_keyupdate(
         streams[server["stream"]]["server"], server_secret, server["cipher_suite"], 1))
     client_responded = bool(authenticate_keyupdate(
@@ -114,6 +114,16 @@ def main():
                 key = f"{other['id']}=>{target['id']}"
                 cross_generation_controls[key] = not authenticate_marker(
                     records, bytes.fromhex(selected["hex"]), target["cipher_suite"], target["marker"])
+
+    if seal["scenario"] == "keyupdate":
+        for target in seal["targets"]:
+            generation_zero_label = ("CLIENT_TRAFFIC_SECRET_0" if target["direction"] == "client"
+                                     else "SERVER_TRAFFIC_SECRET_0")
+            generation_zero = references[(generation_zero_label, target["client_random"])]
+            key = f"flow{target['flow_index']}:{generation_zero_label}=>{target['id']}"
+            cross_generation_controls[key] = not authenticate_marker(
+                streams[target["stream"]][target["direction"]], generation_zero,
+                target["cipher_suite"], target["marker"])
 
     packet_condition = {"packet_condition_ok": True}
     if seal["scenario"] == "keyupdate":

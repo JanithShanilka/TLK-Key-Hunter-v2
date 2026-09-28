@@ -89,8 +89,18 @@ Node 1: 127.0.0.1:18443
         connections[0]['server_extensions']=[43]
         resumed=evaluate('resumption',[first,second],connections,acquisition)
         self.assertTrue(resumed['condition_ok'])
+        self.assertEqual({target['flow_index'] for target in resumed['targets']},{1})
+        self.assertEqual({target['label'] for target in resumed['targets']},
+                         {'CLIENT_TRAFFIC_SECRET_0','SERVER_TRAFFIC_SECRET_0'})
         second['session_reused']=False
         self.assertIn('server_resumption_state_invalid',
                       evaluate('resumption',[first,second],connections,acquisition)['condition_failures'])
+        updated=flow(0,5000)
+        updated.update({'update_requested_monotonic':13,'post_request_path':'/post-update',
+                        'post_response_marker':'post-update-response','post_response_monotonic':14})
+        keyupdate=evaluate('keyupdate',[updated],[connection(0,5000,'a'*64)],acquisition)
+        self.assertTrue(keyupdate['condition_ok'])
+        self.assertEqual({target['label'] for target in keyupdate['targets']},
+                         {'CLIENT_TRAFFIC_SECRET_1','SERVER_TRAFFIC_SECRET_1'})
 
 if __name__=='__main__':unittest.main(verbosity=2)

@@ -11,11 +11,15 @@ from tls13_packets import inspect_connections
 def targets_for(scenario, flows, connections):
     by_port = {item["client_port"]: item for item in connections}
     targets = []
-    for flow in flows:
+    # Resumption flow zero establishes the ticket; the live resumed flow is the
+    # memory-recovery target. KeyUpdate generation zero establishes and
+    # authenticates the transition; generation one is the post-update target.
+    target_flows = flows[1:] if scenario == "resumption" else flows
+    for flow in target_flows:
         connection = by_port.get(flow["peer_port"])
         if connection is None:
             raise RuntimeError(f"No captured handshake for flow {flow['index']}")
-        generations = (0, 1) if scenario == "keyupdate" else (0,)
+        generations = (1,) if scenario == "keyupdate" else (0,)
         for generation in generations:
             for direction in ("CLIENT", "SERVER"):
                 label = f"{direction}_TRAFFIC_SECRET_{generation}"
