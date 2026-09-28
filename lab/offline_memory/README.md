@@ -118,3 +118,5 @@ The first development case and a subsequent fresh validation case both negotiate
 These two cases establish feasibility for the fixed campaign method in this lab, while memory-only role assignment remains unresolved. `run_campaign_tls13.py` freezes the TLS 1.3 scripts, runs fresh sessions sequentially, records all failures, and deletes each completed case's raw core/profile only after durable verification results are saved. Its records must remain separate from the TLS 1.2 campaign.
 
 The 20-session campaign is complete. See [TLS 1.3 repeatability results](../../docs/offline-memory/TLS13_REPEATABILITY_RESULTS.md) for the full non-secret outcome, controls, retention evidence and scope limits.
+
+`show_tls13_campaign_evidence.py` creates a private post-verification HTML report from retained campaign evidence. It displays actual client/server references, offline-selected values and all directional candidate outcomes. The generated `*.private.html` output contains traffic secrets and is excluded from Git; only the generator is versioned.
