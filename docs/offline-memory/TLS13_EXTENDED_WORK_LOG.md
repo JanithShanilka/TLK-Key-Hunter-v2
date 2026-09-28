@@ -21,3 +21,13 @@ RFC 8446 sections 4.2.11, 4.6.3, and 7.2 define negotiated PSK resumption and di
 - Concurrency holds two distinguishable connections open at once and checks separate TCP flows and client randoms. Each flow has distinct request/response markers.
 - KeyUpdate uses a controlled OpenSSL server and a second HTTP request on the same connection after the requested update. Generation-one candidates must directly authenticate generation-one records; deriving an updated key from a recovered generation-zero candidate is not counted as generation-one memory recovery.
 - Repeat campaigns may start only after the corresponding pilot satisfies every acceptance criterion. Setup/tool failure stops the run for inspection, with no automatic retry.
+
+## Implementation checkpoint before requested model switch
+
+- User requested Git change markers. Scope checkpoint committed as `0fc1b5c`.
+- Added scenario-aware acquisition gates and `extended_server.py`, including a minimal ctypes OpenSSL server-side KeyUpdate harness. This is an **unfinished implementation checkpoint**, not validated scenario support.
+- Existing 12 offline unit tests pass; both edited Python modules compile; diff whitespace checks pass. These checks do not validate the new workloads.
+- No new pilot or repeat case has been launched; observed new-scenario counts remain zero. No lab files have been changed.
+- Pending: extend packet validation and independent verification for per-flow markers, resumption packet evidence, generation-specific KeyUpdate evidence and one-bit controls; add meaningful tests; run each pilot under storage guards; launch only successful scenario campaigns; collect reviewed nonsecret results; push review branch/PR.
+- The X-Ray-TLS paper was text-inspected for snapshot context; it does not supply results for these timing arms.
+- User requested Daybreak. The current running model cannot be changed by the exposed tools; Codex UI control was explicitly blocked. Work is checkpointed for continuation after the user changes the chat model. No heartbeat created because no campaign has started.

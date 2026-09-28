@@ -138,7 +138,7 @@ def main(args):
     record = {"case_id": case.name, "started": utc(), "status": "started",
               "kind": "development_capture", "target_key_logging": False,
               "requested_tls_version": args.tls_version,
-              "frida_loaded": False, "key_export_api_called": False,
+              "scenario": args.scenario, "frida_loaded": False, "key_export_api_called": False,
               "socket_sandbox_exception": args.lab_disable_socket_sandbox,
               "accept_insecure_certs": args.lab_accept_insecure_certs,
               "capture_script_sha256": sha256(Path(__file__).resolve()),
@@ -180,7 +180,7 @@ def main(args):
                  "security.tls.version.max": 4 if args.tls_version == "1.3" else 3,
                  "security.tls.enable_0rtt_data": False,
                  "network.http.http3.enable": False, "network.http.speculative-parallel-limit": 0,
-                 "network.http.max-persistent-connections-per-server": 1,
+                 "network.http.max-persistent-connections-per-server": 2 if args.scenario == "concurrency" else 1,
                  "network.captive-portal-service.enabled": False, "network.connectivity-service.enabled": False,
                  "network.dns.disablePrefetch": True, "network.prefetch-next": False,
                  "datareporting.healthreport.uploadEnabled": False, "toolkit.telemetry.enabled": False,
@@ -194,7 +194,7 @@ def main(args):
         os.chown(runtime, account.pw_uid, account.pw_gid)
         launch(["tcpdump", "-i", "lo", "-s", "0", "-U", "-w", str(case / "traffic.pcap"), "tcp", "port", str(args.port)], "tcpdump.log")
         wait_for(lambda: "listening on" in (case / "tcpdump.log").read_text(), 10)
-        server = launch([sys.executable, str(Path(__file__).resolve()), "--server", "--case", str(case), "--reference", str(private), "--port", str(args.port), "--tls-version", args.tls_version], "server.log")
+        server = launch([sys.executable, str(Path(__file__).resolve()), "--server", "--case", str(case), "--reference", str(private), "--port", str(args.port), "--tls-version", args.tls_version, "--scenario", args.scenario], "server.log")
         wait_for(lambda: (case / "server.ready").exists(), 10)
         browser_environment = ["HOME=/home/researcher", f"XDG_RUNTIME_DIR={runtime}"]
         if args.lab_disable_socket_sandbox:
@@ -227,8 +227,13 @@ def main(args):
             tree = command(2, "browsingContext.getTree", {})
             context = tree["contexts"][0]["context"]
             command(3, "browsingContext.navigate", {"context": context, "url": navigation_url, "wait": "none"})
+        if args.scenario in ("resumption", "concurrency", "keyupdate"):
+            wait_for(lambda: (case / "first-complete").exists() or (server.poll() is not None and (_ for _ in ()).throw(RuntimeError("Scenario server exited"))), 60)
+            if args.scenario == "concurrency":
+                context = command(4, "browsingContext.create", {"type": "tab"})["context"]
+            command(5, "browsingContext.navigate", {"context": context, "url": navigation_url + "/second", "wait": "none"})
         def request_arrived():
-            if (case / "server-event.json").exists():
+            if (case / ("server-event.json" if args.scenario == "baseline" else "capture.ready")).exists():
                 return True
             if server.poll() is not None or browser.poll() is not None:
                 raise RuntimeError("Server or browser exited before the controlled request; inspect private logs")
@@ -258,16 +263,19 @@ def main(args):
                    "-ex", f"generate-core-file {dump}", "-ex", "detach", "-ex", "quit"]
         record["capture_command"] = command
         record["capture_started"] = utc()
+        record["capture_started_monotonic"] = time.monotonic()
         capture = launch(command, "gdb-capture.log")
         capture.wait(timeout=120)
         if capture.returncode or not dump.exists():
             raise RuntimeError(f"GDB capture failed with status {capture.returncode}")
+        record["capture_ended_monotonic"] = time.monotonic()
         record.update({"capture_ended": utc(), "dump_sha256": sha256(dump), "dump_bytes": dump.stat().st_size,
                        "status": "captured", "server_reference_read_by_acquirer": False})
         dump.chmod(0o400)
         os.chown(dump, account.pw_uid, account.pw_gid)
         (case / "release-server").touch()
         server.wait(timeout=10)
+        if server.returncode: raise RuntimeError("Scenario server failed")
         write_json(case / "acquisition-seal.json", record)
         print(json.dumps({k: record[k] for k in ("case_id", "status", "dump_bytes", "dump_sha256")}))
     except Exception as error:
@@ -308,12 +316,17 @@ if __name__ == "__main__":
     parser.add_argument("--port", type=int, default=18443)
     parser.add_argument("--firefox", type=Path, default=Path("/opt/tlskeyhunter/firefox-136.0.2-pristine/firefox"))
     parser.add_argument("--tls-version", choices=("1.2", "1.3"), default="1.2")
+    parser.add_argument("--scenario", choices=("baseline", "before-response", "delayed", "resumption", "keyupdate", "concurrency"), default="baseline")
     parser.add_argument("--server", action="store_true")
     parser.add_argument("--lab-disable-socket-sandbox", action="store_true", help="Explicitly authorized disposable-profile compatibility exception")
     parser.add_argument("--lab-accept-insecure-certs", action="store_true", help="Explicitly authorized localhost automation-session certificate exception")
     arguments = parser.parse_args()
     if arguments.server:
         os.umask(0o077)
-        serve(arguments)
+        if arguments.scenario == "baseline":
+            serve(arguments)
+        else:
+            from extended_server import serve as extended_serve
+            extended_serve(arguments)
     else:
         main(arguments)
