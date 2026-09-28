@@ -16,7 +16,10 @@ def read_references(path):
         parts = line.split()
         if len(parts) != 3 or "TRAFFIC_SECRET_" not in parts[0]:
             continue
-        key = (parts[0], parts[1].lower())
+        label = parts[0]
+        if label in ("CLIENT_TRAFFIC_SECRET_N", "SERVER_TRAFFIC_SECRET_N"):
+            label = label.replace("_N", "_1")
+        key = (label, parts[1].lower())
         value = bytes.fromhex(parts[2])
         if key in references and references[key] != value:
             raise RuntimeError("Conflicting duplicate reference entry")

@@ -120,7 +120,7 @@ def serve(args):
                     wait_for(lambda:(case/'release-server').exists(),180)
                 first = args.scenario=='resumption' and index==0
                 redirect = (f'https://localhost:{args.port}/offline/{case.name}/second'
-                            if first else None)
+                            if first or args.scenario == 'keyupdate' else None)
                 response(conn,flow['response_marker'],complete=first or args.scenario=='keyupdate',
                          close=first,location=redirect)
                 flow['response_monotonic']=time.monotonic(); publish()

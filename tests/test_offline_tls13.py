@@ -13,6 +13,7 @@ from validate_tls13 import LABELS
 from check_tls13_scenario import evaluate
 from tls13_packets import (SUITES, authenticate_keyupdate, authenticate_marker,
                            inspect_connections, parse_follow_output, traffic_key_iv)
+from verify_tls13 import read_references
 
 class TLS13Tests(unittest.TestCase):
     def test_directional_labels_and_suite_hash_lengths(self):
@@ -71,6 +72,15 @@ Node 1: 127.0.0.1:18443
             connections=inspect_connections(Path('/unused.pcap'))
         self.assertEqual(len(connections),1)
         self.assertEqual(connections[0]['client_port'],5000)
+
+    def test_openssl_updated_secret_aliases_map_to_generation_one(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'reference.keys'
+            path.write_text('CLIENT_TRAFFIC_SECRET_N '+'a'*64+' '+'01'*48+'\n'+
+                            'SERVER_TRAFFIC_SECRET_N '+'a'*64+' '+'02'*48+'\n')
+            references=read_references(path)
+        self.assertIn(('CLIENT_TRAFFIC_SECRET_1','a'*64),references)
+        self.assertIn(('SERVER_TRAFFIC_SECRET_1','a'*64),references)
 
     def test_scenario_conditions_are_distinct(self):
         connection=lambda stream,port,random:{'stream':stream,'client_port':port,'server_port':18443,

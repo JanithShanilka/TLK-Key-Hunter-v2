@@ -227,7 +227,7 @@ def main(args):
             tree = command(2, "browsingContext.getTree", {})
             context = tree["contexts"][0]["context"]
             command(3, "browsingContext.navigate", {"context": context, "url": navigation_url, "wait": "none"})
-        if args.scenario in ("concurrency", "keyupdate"):
+        if args.scenario == "concurrency":
             def first_phase_complete():
                 if (case / "first-complete").exists():
                     return True
