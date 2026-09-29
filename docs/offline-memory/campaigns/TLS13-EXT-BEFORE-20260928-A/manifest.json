@@ -1,0 +1,32 @@
+{
+  "started": "2026-09-28T21:38:50.648003+00:00",
+  "settings": {
+    "workspace": "/home/researcher/research/TLSKeyHunter-memory-pilot",
+    "campaign_id": "TLS13-EXT-BEFORE-20260928-A",
+    "scenario": "before-response",
+    "count": 20,
+    "interval_seconds": 600,
+    "start_delay_seconds": 0,
+    "budget_gib": 8.0,
+    "minimum_free_gib": 20.0,
+    "capture_python": "/home/researcher/.venv/bin/python",
+    "lab_disable_socket_sandbox": true,
+    "lab_accept_insecure_certs": true
+  },
+  "script_sha256": {
+    "capture_firefox.py": "070fdfdb2a85dcf65ca8734cd42830a6d7ab2fd1d72ecadc1b638b5acea8a577",
+    "extended_server.py": "e2ac792f980cd4f89f64a3ae3ac1ec0f4dc76c480af5864c04db60d04504a7aa",
+    "core_memory.py": "695e0e885f0363943935b0317233a48884ad0a4ab984c66bc1b64d62cf5cd431",
+    "rank_core.py": "cdee1797ce5c48493017b51517a4ab51c254f98a599aa5268a57e27deaeddd1f",
+    "rank_tls13.py": "96d0427233b6eba9adac89e87d9970ec63e98e27ee876e6e9f2d9cd0805a5138",
+    "tls13_packets.py": "4034bc82bf24292a39e0dda22941790c9f49e91df70965c1f2141a4604fb6b55",
+    "check_tls13_scenario.py": "7f6b65bf5dcaff6a140662b5e80bdb3385bec4a757d987ee97f70bcd0b50dc7a",
+    "validate_tls13.py": "c4ca2dcd79df11c7c979f03d675567fe60c797aefa8a58dd565c9af03e6274ea",
+    "verify_tls13.py": "a522395af9799dee598a3b005a06fbbfdc6f59e4e145fddb9c00314c75c306c6",
+    "run_campaign_tls13.py": "c85e245b5d0473dee646c4a1bb7045d64d64eed948da2b07273b0cff6a93b890"
+  },
+  "retention": "After verification and durable result save, delete raw core, disposable profile and runtime. Keep compact evidence. Interrupted/setup failures stop for inspection.",
+  "protocol": "TLS1.3",
+  "scenario": "before-response",
+  "design": "Scenario condition check, reference-blind fixed CKA_VALUE candidate enumeration, direct per-flow/per-generation TLS-record authentication, then independent reference equality, marker, and wrong-secret verification."
+}

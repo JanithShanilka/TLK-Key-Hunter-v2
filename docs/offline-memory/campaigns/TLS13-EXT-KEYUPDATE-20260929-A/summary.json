@@ -1,0 +1,14 @@
+{
+  "state": "completed",
+  "started": "2026-09-29T09:35:49.621488+00:00",
+  "campaign_id": "TLS13-EXT-KEYUPDATE-20260929-A",
+  "planned": 20,
+  "current_case": "TLS13-EXT-KEYUPDATE-20260929-A-020",
+  "ended": "2026-09-29T12:46:51.361620+00:00",
+  "attempted": 20,
+  "successful": 20,
+  "unsuccessful": 0,
+  "observed_success_fraction": 1.0,
+  "updated": "2026-09-29T12:46:51.361646+00:00",
+  "allocated_case_bytes": 2027061248
+}
