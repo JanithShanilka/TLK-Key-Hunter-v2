@@ -10,6 +10,7 @@ import math
 import os
 from pathlib import Path
 import resource
+import signal
 import sys
 import time
 
@@ -106,6 +107,25 @@ def entropy_rank(core, deadline, maximum=MAX_CANDIDATES):
                   "search_exhausted": not timed_out}
 
 
+def bounded_structured_rank(core, seconds):
+    def expired(_signum, _frame):
+        raise TimeoutError("Structured candidate search exceeded its budget")
+
+    previous = signal.signal(signal.SIGALRM, expired)
+    signal.setitimer(signal.ITIMER_REAL, max(0.001, seconds))
+    try:
+        rows = [row for row in structured_rank(core) if row["length"] == SECRET_BYTES]
+        return rows[:MAX_CANDIDATES], {"search_exhausted": len(rows) <= MAX_CANDIDATES,
+                                       "windows_scanned": None,
+                                       "candidate_budget_exceeded": len(rows) > MAX_CANDIDATES}
+    except TimeoutError:
+        return [], {"search_exhausted": False, "windows_scanned": None,
+                    "search_timed_out": True}
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, previous)
+
+
 def assign(rows, connections, pcap, deadline):
     results = []
     trial_count = 0
@@ -165,10 +185,7 @@ def run(core_path, pcap_path, metadata_path, method, output):
     cpu_start = time.process_time()
     with CoreMemory(core_path) as core:
         if method == "structured":
-            found = [row for row in structured_rank(core) if row["length"] == SECRET_BYTES]
-            rows = found[:MAX_CANDIDATES]
-            search = {"search_exhausted": len(found) <= MAX_CANDIDATES, "windows_scanned": None,
-                      "candidate_budget_exceeded": len(found) > MAX_CANDIDATES}
+            rows, search = bounded_structured_rank(core, SEARCH_SECONDS - (time.monotonic() - start))
         else:
             rows, search = entropy_rank(core, start + SEARCH_SECONDS)
     search_elapsed = time.monotonic() - start
