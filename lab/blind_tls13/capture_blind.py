@@ -123,26 +123,42 @@ def capture(args):
         context = command(2, "browsingContext.getTree", {})["contexts"][0]["context"]
         expression = """(() => {
           window.studySockets = [];
+          window.studyErrors = [];
           for (let i = 0; i < COUNT; i++) {
-            const ws = new WebSocket('wss://localhost:PORT/channel/' + crypto.randomUUID());
+            const ws = new WebSocket('wss://localhost:PORT/channel/' + i + '-' + Date.now());
             ws.binaryType = 'arraybuffer';
             let received = 0;
-            const send = () => { const data = new Uint8Array(128 + Math.floor(Math.random() * 384));
-              crypto.getRandomValues(data); ws.send(data); };
+            const send = () => { try { const data = new Uint8Array(128 + Math.floor(Math.random() * 384));
+              crypto.getRandomValues(data); ws.send(data); }
+              catch (error) { window.studyErrors.push({index: i, error: String(error)}); } };
             ws.onopen = send;
             ws.onmessage = () => { received++; if (received < 2) send(); };
+            ws.onerror = () => window.studyErrors.push({index: i, state: ws.readyState});
             window.studySockets.push(ws);
           }
           return window.studySockets.length;
         })()""".replace("COUNT", str(args.connections)).replace("PORT", str(args.port))
-        command(3, "script.evaluate", {"expression": expression, "target": {"context": context}, "awaitPromise": False})
+        launch_result = command(3, "script.evaluate", {"expression": expression,
+                                                       "target": {"context": context}, "awaitPromise": False})
+        write_json(case / "bidi-launch.json", launch_result)
+        if launch_result.get("type") != "success" or launch_result.get("result", {}).get("value") != args.connections:
+            raise RuntimeError("WebDriver BiDi did not start the requested WebSocket workload")
         def exchange_complete():
             if (case / "server.failure.json").exists():
                 raise RuntimeError("Controlled server failed; inspect private log")
             if server.poll() is not None or browser.poll() is not None:
                 raise RuntimeError("Server or Firefox exited before exchange")
             return (case / "capture.ready").exists()
-        wait_for(exchange_complete, 90)
+        try:
+            wait_for(exchange_complete, 90)
+        except Exception:
+            try:
+                diagnostic = command(4, "script.evaluate", {"expression": "({errors:window.studyErrors,states:window.studySockets.map(s=>s.readyState)})",
+                                                            "target": {"context": context}, "awaitPromise": False})
+                write_json(case / "bidi-diagnostic.json", diagnostic)
+            except Exception as diagnostic_error:
+                write_json(case / "bidi-diagnostic-failure.json", {"error": str(diagnostic_error)})
+            raise
         parent_pid, socket_pid_observed = wait_for(lambda: firefox_pids(profile), 20)
         connections = subprocess.check_output(["ss", "-tnp"], text=True)
         relevant = [line for line in connections.splitlines() if f":{args.port}" in line]
