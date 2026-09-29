@@ -12,9 +12,11 @@ import shutil
 import ssl
 import subprocess
 import sys
+import time
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "offline_memory"))
 from capture_firefox import sha256, wait_for
+from tls13_packets import directional_records, inspect_connections
 
 
 def read_exact(connection, count):
@@ -95,8 +97,19 @@ def capture(case, private, port, count):
         server.wait(timeout=10)
         for conn in connections:
             conn.close()
+        # The unrelated workload is short. Give tcpdump time to drain the
+        # kernel capture buffer before terminating it, then verify the PCAP.
+        wait_for(lambda: pcap.stat().st_size > 24, 10)
+        time.sleep(1)
         os.killpg(tcpdump.pid, signal.SIGTERM)
         tcpdump.wait(timeout=10)
+        observed = inspect_connections(pcap)
+        if len(observed) != count:
+            raise RuntimeError(f"Unrelated PCAP has {len(observed)} of {count} completed handshakes")
+        for flow in observed:
+            records = directional_records(pcap, flow["stream"], flow["server_port"])
+            if any(len(records[direction]) < 4 for direction in ("client", "server")):
+                raise RuntimeError("Unrelated PCAP lacks complete bidirectional TLS records")
         result = {"pcap_sha256": sha256(pcap), "connections": count, "independent_client": True}
         (case / "acquisition.json").write_text(json.dumps(result, indent=2) + "\n")
         case.chmod(0o700)
