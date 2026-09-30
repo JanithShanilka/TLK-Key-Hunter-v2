@@ -1,6 +1,12 @@
 # Blind TLS 1.3 saved-memory study
 
-This is a new experiment beside the completed [100-case extended validation](../../docs/offline-memory/TLS13_EXTENDED_RESULTS.md). The earlier code, records, and interpretation are unchanged. This directory does not contain a new recovery result until a development pilot and a separately frozen final campaign have run on the controlled host.
+This is a new experiment beside the completed [100-case extended validation](../../docs/offline-memory/TLS13_EXTENDED_RESULTS.md). The earlier code, records, and interpretation are unchanged. A ten-case development pilot has completed; the separately frozen final campaign is running on the controlled host. Pilot results are development evidence and are not the final contribution result.
+
+## Current run status
+
+The corrected pilot `BLIND-PILOT-20260930-C` completed all ten declared cases on the pinned host: six positive cases were completely correct with the structured method; the mismatched, unrelated-traffic, and two withheld-secret controls behaved as declared; and there were zero structured false assignments. The entropy-only method completed zero positive cases and passed two of four controls, with zero false assignments. Earlier pilots A and B remain preserved as failed development attempts: A exposed a WebDriver launch issue and B exposed a decoy PCAP drain issue.
+
+The final campaign `BLIND-FINAL-20260930-A` was frozen after pilot C completed. Its manifest declares 70 positives and 30 controls, 100 unique case IDs, ten-minute start spacing, and retention of all raw images because the pilot-based projection with headroom was below available disk space. The frozen manifest SHA-256 is `a75a7c2fda8ac17c7fba29523158a4ec74cd756a5016d172f686ce502ab57660`. Its runner writes the final `summary.json` only after the declared cases finish. No final recovery claim should be made from the pilot or a partial final run.
 
 ## Claim and input boundary
 
