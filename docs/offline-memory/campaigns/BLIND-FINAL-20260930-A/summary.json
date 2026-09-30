@@ -1,0 +1,110 @@
+{
+  "attempted": 100,
+  "methods": {
+    "entropy": {
+      "abstentions": 499,
+      "control_attempted": 30,
+      "control_correct": 20,
+      "correct_targets": 1,
+      "false_assignments": 0,
+      "median_cpu_seconds": 186.948292264,
+      "median_wall_seconds": 187.7374491696246,
+      "peak_rss_kib_max": 8620940,
+      "positive_attempted": 70,
+      "positive_complete": 0,
+      "reference_in_candidate_set": 1,
+      "reference_targets_evaluated": 500,
+      "strata": {
+        "mismatch": {
+          "attempted": 10,
+          "case_success": 10,
+          "false_assignments": 0,
+          "scored": 10
+        },
+        "positive_three": {
+          "attempted": 35,
+          "case_success": 0,
+          "false_assignments": 0,
+          "scored": 35
+        },
+        "positive_two": {
+          "attempted": 35,
+          "case_success": 0,
+          "false_assignments": 0,
+          "scored": 35
+        },
+        "unrelated": {
+          "attempted": 10,
+          "case_success": 10,
+          "false_assignments": 0,
+          "scored": 10
+        },
+        "withheld": {
+          "attempted": 10,
+          "case_success": 0,
+          "false_assignments": 0,
+          "scored": 10
+        }
+      }
+    },
+    "structured": {
+      "abstentions": 110,
+      "control_attempted": 30,
+      "control_correct": 30,
+      "correct_targets": 390,
+      "false_assignments": 0,
+      "median_cpu_seconds": 22.280074489999997,
+      "median_wall_seconds": 23.042844924377277,
+      "peak_rss_kib_max": 9060568,
+      "positive_attempted": 70,
+      "positive_complete": 70,
+      "reference_in_candidate_set": 390,
+      "reference_targets_evaluated": 500,
+      "strata": {
+        "mismatch": {
+          "attempted": 10,
+          "case_success": 10,
+          "false_assignments": 0,
+          "scored": 10
+        },
+        "positive_three": {
+          "attempted": 35,
+          "case_success": 35,
+          "false_assignments": 0,
+          "scored": 35
+        },
+        "positive_two": {
+          "attempted": 35,
+          "case_success": 35,
+          "false_assignments": 0,
+          "scored": 35
+        },
+        "unrelated": {
+          "attempted": 10,
+          "case_success": 10,
+          "false_assignments": 0,
+          "scored": 10
+        },
+        "withheld": {
+          "attempted": 10,
+          "case_success": 10,
+          "false_assignments": 0,
+          "scored": 10
+        }
+      }
+    }
+  },
+  "mode": "final",
+  "paired_bootstrap_95_percent_interval": [
+    1.0,
+    1.0
+  ],
+  "paired_bootstrap_repetitions": 20000,
+  "paired_complete_case_difference": 1.0,
+  "planned": 100,
+  "scored": 100,
+  "status_counts": {
+    "scored": 100
+  },
+  "strong_contribution_predeclared": true
+}

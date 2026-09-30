@@ -1,0 +1,652 @@
+{
+  "authentication_seconds": 300,
+  "cases": [
+    {
+      "case_id": "Bf4a5af96f3482163",
+      "connections": 3,
+      "donor": "B805932671a1b7fe2",
+      "kind": "mismatch",
+      "status": "planned"
+    },
+    {
+      "case_id": "B3be2c1df57873d90",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B3ea9ec8a6046eec6",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B401279fb7168553b",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B7d68f4d5839a20ec",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B8f5e671ff70696a9",
+      "connections": 2,
+      "kind": "unrelated",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bcdd8cc2068b3e65d",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B8502f5ad9d6a84b8",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B306cdadf4d4cd27f",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B805932671a1b7fe2",
+      "connections": 2,
+      "donor": "Bcc41b96df7ff77b9",
+      "kind": "mismatch",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bcc41b96df7ff77b9",
+      "connections": 3,
+      "donor": "Bd5be665945241b6a",
+      "kind": "mismatch",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bacc794419773aba0",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Baf84552241f7307a",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Beff5cd26c113443e",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B22c64956b228e358",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B8a5effb64aae7031",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bc66cea095d4987d5",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B08809df4076860e8",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B098847c13b5f2a30",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bc6de914fa8d8628f",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bbc608354c6c958cd",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B69ad3878d5dc410f",
+      "connections": 3,
+      "kind": "unrelated",
+      "status": "planned"
+    },
+    {
+      "case_id": "B27d293826e0aa96d",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B961831d7f6a97c3c",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B0fd0260c0e19aeaa",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B173be31d7781155d",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bd5be665945241b6a",
+      "connections": 3,
+      "donor": "Bf862477982b4b582",
+      "kind": "mismatch",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bf0a60d523e48b772",
+      "connections": 2,
+      "kind": "withheld",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bd9679a28bf768a42",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B446d073fd1c553e7",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B5eac136e19471516",
+      "connections": 2,
+      "kind": "withheld",
+      "status": "planned"
+    },
+    {
+      "case_id": "B7ba99112193e6b35",
+      "connections": 3,
+      "kind": "withheld",
+      "status": "planned"
+    },
+    {
+      "case_id": "B77489c13ed44298b",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B7801dd65c3333f0a",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B4a252f45148e4142",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B3afc7c9abc3f90a0",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B8405e288bcfc16f7",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B1d90b6166a5c888a",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Baf2a3666bdb357f2",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Be9ef6cc526448b99",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bef638e6a3663e739",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Be3eff6a8af75905f",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bebc2acabdb4275b8",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bb46fe22b78a79ec4",
+      "connections": 3,
+      "kind": "withheld",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bf6b0d5478cda43cf",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bbb4110d2cd021f93",
+      "connections": 2,
+      "kind": "unrelated",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bf8f1c1a77f5082a9",
+      "connections": 3,
+      "kind": "withheld",
+      "status": "planned"
+    },
+    {
+      "case_id": "B45a4a00ac49dc9c0",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B542d80fe5e1b81c9",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Be74dd048b11c11c0",
+      "connections": 3,
+      "kind": "unrelated",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bb27eebc5f485bf15",
+      "connections": 3,
+      "kind": "unrelated",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bf862477982b4b582",
+      "connections": 3,
+      "donor": "Bc84a0d21603f4982",
+      "kind": "mismatch",
+      "status": "planned"
+    },
+    {
+      "case_id": "Be77461263d867084",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B12e8e624d7d3d0f8",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B23b6028508ea09ee",
+      "connections": 2,
+      "kind": "unrelated",
+      "status": "planned"
+    },
+    {
+      "case_id": "Be13f9ea76f674dfc",
+      "connections": 2,
+      "kind": "withheld",
+      "status": "planned"
+    },
+    {
+      "case_id": "B40256647cfda5075",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bc84a0d21603f4982",
+      "connections": 3,
+      "donor": "Bc142649276273dc2",
+      "kind": "mismatch",
+      "status": "planned"
+    },
+    {
+      "case_id": "B3e5d12c3f212d8c6",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bc142649276273dc2",
+      "connections": 2,
+      "donor": "Bf7c62e5f8b4c395b",
+      "kind": "mismatch",
+      "status": "planned"
+    },
+    {
+      "case_id": "B172279bbcf231ce3",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bca7eebffa83c08bb",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bb19f97dea0defa93",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B688aef2e7d740334",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B6e11560d972959ea",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bfd874a82e915192b",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B02797908aa3ea09e",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B0f0ea555fa9d86e7",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B7813bee4367e6f72",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bdf429a7def2d7562",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B63461ad83b020f39",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B81a8af5e32bd16de",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B2839b2b687d5962f",
+      "connections": 3,
+      "kind": "withheld",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bb1ceaaa5de29df5b",
+      "connections": 3,
+      "kind": "unrelated",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bb90d99599d0a30b5",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bd2147f8379ace0b9",
+      "connections": 2,
+      "kind": "withheld",
+      "status": "planned"
+    },
+    {
+      "case_id": "B8434b88416a41c38",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bfad1fff491485f35",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B6feb5c343b601600",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B9b8dc0debbd6a865",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B923105e2024976b2",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B9b4f6cf8d951531e",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Be98ebf49ff1a4803",
+      "connections": 2,
+      "kind": "unrelated",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bf7c62e5f8b4c395b",
+      "connections": 2,
+      "donor": "B99df650c13394b1c",
+      "kind": "mismatch",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bdab7d123bc4d5670",
+      "connections": 3,
+      "kind": "withheld",
+      "status": "planned"
+    },
+    {
+      "case_id": "B8de51aca7cc9c8df",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B9c5e7276514b0b57",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B99df650c13394b1c",
+      "connections": 2,
+      "donor": "B477471ce6b2e4ee8",
+      "kind": "mismatch",
+      "status": "planned"
+    },
+    {
+      "case_id": "B58df5957d22b1de6",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B8ff87fc0cf6cc6cc",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B0b9357df1009089f",
+      "connections": 2,
+      "kind": "withheld",
+      "status": "planned"
+    },
+    {
+      "case_id": "B477471ce6b2e4ee8",
+      "connections": 2,
+      "donor": "Bf4a5af96f3482163",
+      "kind": "mismatch",
+      "status": "planned"
+    },
+    {
+      "case_id": "Ba8bd1c85f50f6c58",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "B3fbb05519676796b",
+      "connections": 2,
+      "kind": "unrelated",
+      "status": "planned"
+    },
+    {
+      "case_id": "B638b114fae0d91ae",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Bcfa24931b56cf72a",
+      "connections": 3,
+      "kind": "unrelated",
+      "status": "planned"
+    },
+    {
+      "case_id": "B11954590390147f7",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Ba0af39c01558dbfb",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Ba1d81b28ef1ab7e2",
+      "connections": 2,
+      "kind": "positive",
+      "status": "planned"
+    },
+    {
+      "case_id": "Be371e197e2c4fe32",
+      "connections": 3,
+      "kind": "positive",
+      "status": "planned"
+    }
+  ],
+  "created_utc": "2026-09-30T00:33:24.574219+00:00",
+  "free_bytes_at_freeze": 129360146432,
+  "max_candidate_trials": 100,
+  "max_cpu_seconds": 540,
+  "max_virtual_memory_bytes": 17179869184,
+  "minimum_free_bytes": 21474836480,
+  "mode": "final",
+  "pilot_max_core_allocated_bytes": 353705984,
+  "policy": "No replacement of attempted cases; both outputs sealed before scoring; private answers are evaluator-only.",
+  "preserved_baseline_commit": "fdcbbef",
+  "preserved_baseline_result": "docs/offline-memory/TLS13_EXTENDED_RESULTS.md",
+  "projected_required_free_bytes": 70109409280,
+  "retained_case_ids": null,
+  "retention": "all",
+  "script_sha256": {
+    "blind_tls13/blind_server.py": "1b904a224b1ab240e88d522a3d0ee09b72da2163beb899f4bd653a3772612c2f",
+    "blind_tls13/capture_blind.py": "f7e773090b8867403c8e40ea933c57bb7869926e7f436f51105e3dc36d89d38d",
+    "blind_tls13/capture_decoy.py": "f55a8dd350337ac267302a05e2fd8a9473c46421f592342b80dac116617eb601",
+    "blind_tls13/evaluate.py": "933e7657c114b4b25b5f154dc3d4d0821d78cf9a6cf2260d2ef5039354a3ce5e",
+    "blind_tls13/record_auth.py": "7031c63b268e6ef4e61ffff33a8b2c0dd5f612938414226ce6d1ae0dec77e814",
+    "blind_tls13/recover.py": "2f62dbedd5a84cb0afb9972a7192effa88fa98c7ffb4a72a6e2f13f2d8edf9bb",
+    "blind_tls13/run_study.py": "9463d6df26ee970225ec4cf42c70d32d46f9e01b08f646f944d227bf7b307f68",
+    "blind_tls13/summarize.py": "8a0161e766df960cab473bd36390bb55062e14d1ae7f11063d5f849d5882df5c",
+    "offline_memory/capture_firefox.py": "070fdfdb2a85dcf65ca8734cd42830a6d7ab2fd1d72ecadc1b638b5acea8a577",
+    "offline_memory/core_memory.py": "695e0e885f0363943935b0317233a48884ad0a4ab984c66bc1b64d62cf5cd431",
+    "offline_memory/rank_core.py": "cdee1797ce5c48493017b51517a4ab51c254f98a599aa5268a57e27deaeddd1f",
+    "offline_memory/rank_tls13.py": "96d0427233b6eba9adac89e87d9970ec63e98e27ee876e6e9f2d9cd0805a5138",
+    "offline_memory/tls13_packets.py": "4034bc82bf24292a39e0dda22941790c9f49e91df70965c1f2141a4604fb6b55"
+  },
+  "search_seconds": 180,
+  "seed": "e932ece8fb2efe471b90c872799a6b10",
+  "spacing_seconds": 600,
+  "target_hashes": {
+    "firefox": "385265da8818d293afd50ce410b678e3cf2079bb4e2d60231dfb818cd12b8b55",
+    "libsoftokn3.so": "064c24743abe22bc8c9b87c6f8c4d7e8facc66d94a73b7ed9702e1d2733d2fe7",
+    "libssl3.so": "41b76c48fff44d62e34b463e52d1a4842f1b8c39711e6e1ac77ae6dbc3906f57"
+  }
+}
